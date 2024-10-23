@@ -1,0 +1,1109 @@
+Archive member included to satisfy reference by file (symbol)
+
+.\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+                              .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o (CyHalt)
+.\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+                              .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o) (CyPmReadStatus)
+.\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+                              .\CortexM3\ARM_GCC_541\Debug\main.o (o_DebugLed_Write)
+.\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+                              .\CortexM3\ARM_GCC_541\Debug\main.o (SPI_Module_ReadTxStatus)
+.\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+                              .\CortexM3\ARM_GCC_541\Debug\main.o (DebugPin_Write)
+.\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+                              .\CortexM3\ARM_GCC_541\Debug\main.o (Display_DC_Write)
+.\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+                              .\CortexM3\ARM_GCC_541\Debug\main.o (Display_RST_Write)
+.\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyBootAsmGnu.o)
+                              .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o (CyDelayCycles)
+.\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+                              .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o) (CyFlash_SetWaitCycles)
+.\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+                              .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o) (CySpcStart)
+d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                              .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o (__errno)
+d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+                              d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o (exit)
+d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                              d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o) (_global_impure_ptr)
+d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                              d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o (__libc_init_array)
+d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+                              .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o (memcpy)
+d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                              d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o (memset)
+
+Allocating common symbols
+Common symbol       size              file
+
+dieTemperature      0x2               .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+SPI_Module_swStatusTx
+                    0x1               .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+SPI_Module_swStatusRx
+                    0x1               .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+ .data          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+ .bss           0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+ .data          0x00000000        0x4 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .text          0x00000000       0x74 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .data          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .bss           0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .ARM.extab     0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .ARM.exidx     0x00000000        0x8 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .text.LCD_SetPixel
+                0x00000000       0x14 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+ .text.get_font
+                0x00000000       0x7c .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+ .rodata        0x00000000    0x2f8c0 .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.SetAnalogRoutingPumps
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .data          0x00000000        0x4 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .text._exit    0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .text._sbrk    0x00000000       0x30 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .bss           0x00000000       0x1c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyUSB_PowerOnCheck
+                0x00000000       0x48 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyBusClk_Internal_SetDivider
+                0x00000000       0x48 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyPLL_OUT_Stop
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyIMO_Stop
+                0x00000000       0x1c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyIMO_EnableDoubler
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyIMO_DisableDoubler
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyMasterClk_SetSource
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyMasterClk_SetDivider
+                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyBusClk_SetDivider
+                0x00000000       0x70 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyUsbClk_SetSource
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyILO_Start1K
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyILO_Stop1K
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyILO_Start100K
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyILO_Stop100K
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyPLL_OUT_Start
+                0x00000000       0x78 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyIMO_Start
+                0x00000000       0x60 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyILO_Enable33K
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyILO_Disable33K
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyILO_SetSource
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyILO_SetPowerMode
+                0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyXTAL_32KHZ_Stop
+                0x00000000       0x30 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyXTAL_32KHZ_ReadStatus
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyXTAL_Start
+                0x00000000       0xac .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyXTAL_Stop
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyXTAL_EnableErrStatus
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyXTAL_DisableErrStatus
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyXTAL_ReadStatus
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyXTAL_EnableFaultRecovery
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyXTAL_DisableFaultRecovery
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyXTAL_SetStartup
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyXTAL_SetFbVoltage
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyXTAL_SetWdVoltage
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyHalt   0x00000000        0x4 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyPLL_OUT_SetPQ
+                0x00000000       0x60 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyPLL_OUT_SetSource
+                0x00000000       0x34 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyIMO_SetTrimValue
+                0x00000000       0xcc .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyIMO_SetFreq
+                0x00000000       0xf4 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyIMO_SetSource
+                0x00000000       0x58 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySoftwareReset
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyDelayUs
+                0x00000000       0x14 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyXTAL_32KHZ_SetPowerMode
+                0x00000000       0x84 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyXTAL_32KHZ_Start
+                0x00000000       0x74 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyDelayFreq
+                0x00000000       0x4c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyWdtStart
+                0x00000000       0x40 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyWdtClear
+                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyVdStickyStatus
+                0x00000000       0x2c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyVdLvDigitEnable
+                0x00000000       0x84 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyVdLvAnalogEnable
+                0x00000000       0x80 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyVdLvDigitDisable
+                0x00000000       0x30 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyVdLvAnalogDisable
+                0x00000000       0x28 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyVdHvAnalogEnable
+                0x00000000       0x54 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyVdHvAnalogDisable
+                0x00000000       0x20 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyVdRealTimeStatus
+                0x00000000       0x1c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyDisableInts
+                0x00000000       0x1c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyEnableInts
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyFlushCache
+                0x00000000       0x44 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyIntSetSysVector
+                0x00000000       0x28 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyIntGetSysVector
+                0x00000000       0x20 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyIntSetVector
+                0x00000000       0x28 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyIntGetVector
+                0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyIntSetPriority
+                0x00000000       0x30 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyIntGetPriority
+                0x00000000       0x20 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyIntGetState
+                0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickStop
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickEnableInterrupt
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickEnable
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickDisableInterrupt
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickSetReload
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickGetReload
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickGetValue
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickSetClockSource
+                0x00000000       0x20 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickGetClockSource
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickGetCountFlag
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickServiceCallbacks
+                0x00000000       0x28 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickClear
+                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickInit
+                0x00000000       0x58 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickStart
+                0x00000000       0x1c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickSetCallback
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CySysTickGetCallback
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text.CyGetUniqueId
+                0x00000000       0x70 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .bss           0x00000000       0x43 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmHibSlpSaveSet
+                0x00000000      0x1dc .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmHibSlpRestore
+                0x00000000       0xd8 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmHviLviSaveDisable
+                0x00000000       0xa0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmHibSaveSet
+                0x00000000       0x98 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmHviLviRestore
+                0x00000000       0x48 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmHibRestore
+                0x00000000       0x60 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmSaveClocks
+                0x00000000      0x218 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmRestoreClocks
+                0x00000000      0x24c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmAltAct
+                0x00000000       0x6c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmSleep
+                0x00000000       0xf4 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmHibernateEx
+                0x00000000       0xf4 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmHibernate
+                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmReadStatus
+                0x00000000       0x30 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmCtwSetInterval
+                0x00000000       0x5c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmOppsSet
+                0x00000000       0x2c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text.CyPmFtwSetInterval
+                0x00000000       0x5c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .rodata        0x00000000        0xf .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+ .text.o_DebugLed_SetDriveMode
+                0x00000000       0x30 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+ .text.o_DebugLed_Read
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+ .text.o_DebugLed_ReadDataReg
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_Stop
+                0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_EnableTxInt
+                0x00000000        0x4 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_EnableRxInt
+                0x00000000        0x4 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_DisableTxInt
+                0x00000000        0x4 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_DisableRxInt
+                0x00000000        0x4 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_SetTxInterruptMode
+                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_SetRxInterruptMode
+                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_ReadRxData
+                0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_GetRxBufferSize
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_GetTxBufferSize
+                0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_ClearRxBuffer
+                0x00000000       0x1c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_ClearTxBuffer
+                0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_PutArray
+                0x00000000       0x20 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_EnableInt
+                0x00000000        0x4 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_DisableInt
+                0x00000000        0x4 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_SetInterruptMode
+                0x00000000       0x14 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text.SPI_Module_ReadStatus
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ COMMON         0x00000000        0x2 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+ .text.DebugPin_SetDriveMode
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+ .text.DebugPin_Read
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+ .text.DebugPin_ReadDataReg
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+ .text.Display_DC_SetDriveMode
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+ .text.Display_DC_Read
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+ .text.Display_DC_ReadDataReg
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+ .text.Display_RST_SetDriveMode
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+ .text.Display_RST_Read
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+ .text.Display_RST_ReadDataReg
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyBootAsmGnu.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyBootAsmGnu.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .text.CySetTempInt
+                0x00000000       0x60 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .text.CyFlash_Start
+                0x00000000       0x54 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .text.CyFlash_Stop
+                0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .text.CyFlash_EraseRow
+                0x00000000       0x78 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .text.CyFlashGetSpcAlgorithm
+                0x00000000       0x4c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .text.CySetTemp
+                0x00000000       0x14 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .text.CySetFlashEEBuffer
+                0x00000000       0x20 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .text.CyWriteRowFull
+                0x00000000       0xf8 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .text.CyWriteRowData
+                0x00000000       0x14 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .text.CyFlash_SetWaitCycles
+                0x00000000       0x7c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .text.CyEEPROM_Start
+                0x00000000       0x54 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .text.CyEEPROM_Stop
+                0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .text.CyEEPROM_ReadReserve
+                0x00000000       0x1c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .text.CyEEPROM_ReadRelease
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ COMMON         0x00000000        0x2 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .bss           0x00000000        0x8 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .text.CySpcStart
+                0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .text.CySpcStop
+                0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .text.CySpcReadData
+                0x00000000       0x34 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .text.CySpcLoadMultiByte
+                0x00000000       0x78 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .text.CySpcLoadRow
+                0x00000000       0x50 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .text.CySpcLoadRowFull
+                0x00000000       0x80 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .text.CySpcWriteRow
+                0x00000000       0x4c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .text.CySpcEraseSector
+                0x00000000       0x3c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .text.CySpcEraseRow
+                0x00000000       0x4c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .text.CySpcGetTemp
+                0x00000000       0x3c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .text.CySpcLock
+                0x00000000       0x4c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .text.CySpcUnlock
+                0x00000000       0x38 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .text.CySpcGetAlgorithm
+                0x00000000       0x28 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .text          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .data          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .bss           0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .text          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .data          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .text.exit     0x00000000       0x28 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .text          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .data          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .rodata._global_impure_ptr
+                0x00000000        0x4 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .text          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .data          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .bss           0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .text          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .data          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .bss           0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .text          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .data          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .text          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .data          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .bss           0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .text          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+ .data          0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+ .bss           0x00000000        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00040000         xr
+ram              0x1fff8000         0x00010000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+LOAD d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+LOAD d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+START GROUP
+LOAD .\CortexM3\ARM_GCC_541\Debug\main.o
+LOAD .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+LOAD .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+LOAD .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+LOAD .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+LOAD .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a
+LOAD D:\Applications\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a
+END GROUP
+START GROUP
+LOAD d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a
+LOAD d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a
+LOAD d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libc_nano.a
+END GROUP
+START GROUP
+LOAD d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a
+LOAD d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libc_nano.a
+END GROUP
+LOAD d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+LOAD d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+START GROUP
+LOAD d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a
+LOAD d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libc.a
+LOAD d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libnosys.a
+END GROUP
+                0x00000000                CY_APPL_ORIGIN = 0x0
+                0x00000100                CY_FLASH_ROW_SIZE = 0x100
+                0x00000020                CY_ECC_ROW_SIZE = 0x20
+                0x00000000                CY_EE_IN_BTLDR = 0x0
+                0x00000000                CY_APPL_LOADABLE = 0x0
+                0x00000800                CY_EE_SIZE = 0x800
+                0x00000001                CY_APPL_NUM = 0x1
+                0x00000001                CY_APPL_MAX = 0x1
+                0x00000040                CY_METADATA_SIZE = 0x40
+                0x00000000                CY_APPL_LOADABLE = 0x0
+                0x00000000                CY_CHECKSUM_EXCLUDE_SIZE = ALIGN (0x0, CY_FLASH_ROW_SIZE)
+                [!provide]                PROVIDE (__cy_heap_start, _end)
+                0x00000001                PROVIDE (__cy_region_num, ((__cy_regions_end - __cy_regions) / 0x10))
+                0x20008000                PROVIDE (__cy_stack, (ORIGIN (ram) + LENGTH (ram)))
+                [!provide]                PROVIDE (__cy_heap_end, (__cy_stack - 0x800))
+
+.cybootloader   0x00000000        0x0
+ *(.cybootloader)
+                0x00000000                appl1_start = CY_APPL_ORIGIN?CY_APPL_ORIGIN:ALIGN (CY_FLASH_ROW_SIZE)
+                0x0001ff00                appl2_start = (appl1_start + ALIGN ((((LENGTH (rom) - appl1_start) - (0x2 * CY_FLASH_ROW_SIZE)) / 0x2), CY_FLASH_ROW_SIZE))
+                0x00000000                appl_start = (CY_APPL_NUM == 0x1)?appl1_start:appl2_start
+                0x00000000                ecc_offset = ((appl_start / CY_FLASH_ROW_SIZE) * CY_ECC_ROW_SIZE)
+                0x00000000                ee_offset = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?((CY_EE_SIZE / CY_APPL_MAX) * (CY_APPL_NUM - 0x1)):0x0
+                0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
+                [!provide]                PROVIDE (CY_ECC_OFFSET, ecc_offset)
+
+.text           0x00000000      0x94e
+ CREATE_OBJECT_SYMBOLS
+                0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
+ *(.romvectors)
+ .romvectors    0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00000000                RomVectors
+                0x00000001                ASSERT ((. != __cy_interrupt_vector), No interrupt vector)
+                0x00000001                ASSERT (CY_APPL_ORIGIN?(SIZEOF (.cybootloader) <= CY_APPL_ORIGIN):0x1, Wrong image location)
+                0x00000010                PROVIDE (__cy_reset, Reset)
+ *(.text.Reset)
+ .text.Reset    0x00000010       0x18 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00000010                Reset
+                0x00000001                ASSERT ((. != __cy_reset), No reset code)
+ *(.dma_init)
+                0x00000001                ASSERT ((((appl_start + .) <= 0x10000) || 0x1), DMA Init must be within the first 64k of flash)
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x00000028       0x5c d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .text.SPI_Ready
+                0x00000084       0x20 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .text.LCD_DC_Setmode
+                0x000000a4        0x8 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .text.LCD_Reset
+                0x000000ac       0x1c .\CortexM3\ARM_GCC_541\Debug\main.o
+                0x000000ac                LCD_Reset
+ .text.LCD_WriteData_Byte
+                0x000000c8       0x24 .\CortexM3\ARM_GCC_541\Debug\main.o
+                0x000000c8                LCD_WriteData_Byte
+ .text.LCD_WriteData_Word
+                0x000000ec       0x18 .\CortexM3\ARM_GCC_541\Debug\main.o
+                0x000000ec                LCD_WriteData_Word
+ .text.LCD_WriteReg
+                0x00000104       0x24 .\CortexM3\ARM_GCC_541\Debug\main.o
+                0x00000104                LCD_WriteReg
+ .text.LCD_Init
+                0x00000128      0x1f0 .\CortexM3\ARM_GCC_541\Debug\main.o
+                0x00000128                LCD_Init
+ .text.LCD_SetCursor
+                0x00000318       0x54 .\CortexM3\ARM_GCC_541\Debug\main.o
+                0x00000318                LCD_SetCursor
+ .text.LCD_TransferBuffer
+                0x0000036c       0x48 .\CortexM3\ARM_GCC_541\Debug\main.o
+                0x0000036c                LCD_TransferBuffer
+ .text.LCD_SetWindow
+                0x000003b4       0x60 .\CortexM3\ARM_GCC_541\Debug\main.o
+                0x000003b4                LCD_SetWindow
+ .text.LCD_Clear
+                0x00000414       0x18 .\CortexM3\ARM_GCC_541\Debug\main.o
+                0x00000414                LCD_Clear
+ .text.main     0x0000042c       0x30 .\CortexM3\ARM_GCC_541\Debug\main.o
+                0x0000042c                main
+ .text.CyClockStartupError
+                0x0000045c        0x4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.cfg_write_bytes32
+                0x00000460       0x34 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.AnalogSetDefault
+                0x00000494       0x28 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.CYMEMZERO
+                0x000004bc        0xc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.ClockSetup
+                0x000004c8       0x9c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.CYCONFIGCPY
+                0x00000564        0x8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.cyfitter_cfg
+                0x0000056c      0x110 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x0000056c                cyfitter_cfg
+ .text.IntDefaultHandler
+                0x0000067c       0x10 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x0000067c                IntDefaultHandler
+ .text.Start_c  0x0000068c       0x4c .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x0000068c                Start_c
+ .text.initialize_psoc
+                0x000006d8       0x68 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x000006d8                initialize_psoc
+ .text.CyDelay  0x00000740       0x2c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+                0x00000740                CyDelay
+ .text.o_DebugLed_Write
+                0x0000076c       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+                0x0000076c                o_DebugLed_Write
+ .text.SPI_Module_Enable
+                0x00000784       0x30 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+                0x00000784                SPI_Module_Enable
+ .text.SPI_Module_ReadTxStatus
+                0x000007b4        0xc .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+                0x000007b4                SPI_Module_ReadTxStatus
+ .text.SPI_Module_ReadRxStatus
+                0x000007c0        0xc .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+                0x000007c0                SPI_Module_ReadRxStatus
+ .text.SPI_Module_WriteTxData
+                0x000007cc       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+                0x000007cc                SPI_Module_WriteTxData
+ .text.SPI_Module_ClearFIFO
+                0x000007e4       0x3c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+                0x000007e4                SPI_Module_ClearFIFO
+ .text.SPI_Module_Init
+                0x00000820       0x28 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+                0x00000820                SPI_Module_Init
+ .text.SPI_Module_Start
+                0x00000848       0x1c .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+                0x00000848                SPI_Module_Start
+ .text.DebugPin_Write
+                0x00000864       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+                0x00000864                DebugPin_Write
+ .text.Display_DC_Write
+                0x0000087c       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+                0x0000087c                Display_DC_Write
+ .text.Display_RST_Write
+                0x00000894       0x18 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+                0x00000894                Display_RST_Write
+ *fill*         0x000008ac        0x4 
+ .text          0x000008b0       0x20 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyBootAsmGnu.o)
+                0x000008b0                CyDelayCycles
+                0x000008c0                CyEnterCriticalSection
+                0x000008c8                CyExitCriticalSection
+ .text.__errno  0x000008d0        0xc d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x000008d0                __errno
+ .text.__libc_init_array
+                0x000008dc       0x4c d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x000008dc                __libc_init_array
+ .text.memcpy   0x00000928       0x16 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x00000928                memcpy
+ .text.memset   0x0000093e       0x10 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x0000093e                memset
+ *(.plt)
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x0000094e        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x0000094e        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x0000094e        0x0 linker stubs
+ *(.bootloader)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ *(.gcc_except_table)
+
+.v4_bx          0x00000950        0x0
+ .v4_bx         0x00000950        0x0 linker stubs
+
+.iplt           0x00000950        0x0
+ .iplt          0x00000950        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame       0x00000950        0x4
+ *(.eh_frame)
+ .eh_frame      0x00000950        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .eh_frame      0x00000950        0x4 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+                [!provide]                PROVIDE (__exidx_start, .)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00000954                __exidx_end = .
+
+.rodata         0x00000954       0x7c
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x00000954       0x42 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .rodata.str1.1
+                0x00000996        0x2 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x00000998                . = ALIGN (0x4)
+ *(.init)
+ .init          0x00000998        0x4 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x00000998                _init
+ .init          0x0000099c        0x8 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x000009a4                . = ALIGN (0x4)
+                0x000009a4                __preinit_array_start = .
+ *(.preinit_array)
+                0x000009a4                __preinit_array_end = .
+                0x000009a4                . = ALIGN (0x4)
+                0x000009a4                __init_array_start = .
+ *(SORT(.init_array.*))
+ *(.init_array)
+ .init_array    0x000009a4        0x4 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .init_array    0x000009a8        0x4 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x000009ac                __init_array_end = .
+                0x000009ac                . = ALIGN (0x4)
+ *(.fini)
+ .fini          0x000009ac        0x4 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x000009ac                _fini
+ .fini          0x000009b0        0x8 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x000009b8                . = ALIGN (0x4)
+                0x000009b8                __fini_array_start = .
+ *(.fini_array)
+ .fini_array    0x000009b8        0x4 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ *(SORT(.fini_array.*))
+                0x000009bc                __fini_array_end = .
+                0x000009bc                . = ALIGN (0x4)
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *crtend.o(.ctors)
+                0x000009bc                . = ALIGN (0x4)
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *crtend.o(.dtors)
+                0x000009bc                . = ALIGN (0x4)
+                0x000009bc                __cy_regions = .
+                0x000009bc        0x4 LONG 0x9d0 __cy_region_init_ram
+                0x000009c0        0x4 LONG 0x1fff80c8 __cy_region_start_data
+                0x000009c4        0x4 LONG 0x78 __cy_region_init_size_ram
+                0x000009c8        0x4 LONG 0x20 __cy_region_zero_size_ram
+                0x000009cc                __cy_regions_end = .
+                0x000009d0                . = ALIGN (0x8)
+ *fill*         0x000009cc        0x4 
+                0x000009d0                _etext = .
+
+.cy_checksum_exclude
+                0x000009d0        0x0
+ *(.cy_checksum_exclude)
+
+.ramvectors     0x1fff8000       0xc0
+                0x1fff8000                __cy_region_start_ram = .
+ *(.ramvectors)
+ .ramvectors    0x1fff8000       0xc0 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x1fff8000                CyRamVectors
+
+.noinit         0x1fff80c0        0x1
+ *(.noinit)
+ .noinit        0x1fff80c0        0x1 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+                0x1fff80c0                CyResetStatus
+
+.data           0x1fff80c8       0x78 load address 0x000009d0
+                0x1fff80c8                __cy_region_start_data = .
+ *(.jcr)
+ .jcr           0x1fff80c8        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .jcr           0x1fff80c8        0x4 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ *(.got.plt)
+ *(.got)
+ *(.shdata)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x1fff80cc       0x10 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+                0x1fff80cc                cydelay_32k_ms
+                0x1fff80d0                cydelay_freq_khz
+                0x1fff80d4                cydelay_freq_mhz
+                0x1fff80d8                cydelay_freq_hz
+ .data.impure_data
+                0x1fff80dc       0x60 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x1fff813c        0x4 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x1fff813c                _impure_ptr
+                0x1fff8140                . = ALIGN (0x8)
+ *(.ram)
+                0x1fff8140                _edata = .
+
+.igot.plt       0x1fff8140        0x0 load address 0x00000a48
+ .igot.plt      0x1fff8140        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+
+.bss            0x1fff8140       0x20 load address 0x00000a48
+                0x1fff8140                PROVIDE (__bss_start__, .)
+ *(.shbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x1fff8140       0x1c d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .bss           0x1fff815c        0x1 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+                0x1fff815c                SPI_Module_initVar
+ *(COMMON)
+                0x1fff8160                . = ALIGN (0x8)
+ *fill*         0x1fff815d        0x3 
+ *(.ram.b)
+                0x1fff8160                _end = .
+                0x1fff8160                __end = .
+                0x1fff8160                PROVIDE (end, .)
+                0x1fff8160                PROVIDE (__bss_end__, .)
+                0x000009d0                __cy_region_init_ram = LOADADDR (.data)
+                0x00000078                __cy_region_init_size_ram = (_edata - ADDR (.data))
+                0x00000020                __cy_region_zero_size_ram = (_end - _edata)
+
+.heap           0x1fff8160       0x80 load address 0x00000a48
+                0x1fff8160                . = _end
+                0x1fff81e0                . = (. + 0x80)
+ *fill*         0x1fff8160       0x80 
+                0x1fff81e0                __cy_heap_limit = .
+
+.stack          0x20007800      0x800
+                0x20007800                __cy_stack_limit = .
+                0x20008000                . = (. + 0x800)
+ *fill*         0x20007800      0x800 
+                0x00000001                ASSERT ((__cy_stack_limit >= __cy_heap_limit), region RAM overflowed with stack)
+                0x00000000                cy_checksum_exclude_size = (CY_APPL_LOADABLE == 0x1)?SIZEOF (.cy_checksum_exclude):0x0
+                0x00000001                ASSERT ((cy_checksum_exclude_size <= CY_CHECKSUM_EXCLUDE_SIZE), CY_BOOT: Section .cy_checksum_exclude size exceedes specified limit.)
+
+.cyloadermeta
+ *(.cyloadermeta)
+
+.cyloadablemeta
+ *(.cyloadablemeta)
+
+.cyconfigecc    0x80000000      0x2e4
+ *(.cyconfigecc)
+ .cyconfigecc   0x80000000      0x2e4 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+                0x80000000                cy_meta_configecc
+
+.cycustnvl      0x90000000        0x4
+ *(.cycustnvl)
+ .cycustnvl     0x90000000        0x4 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+                0x90000000                cy_meta_custnvl
+
+.cywolatch      0x90100000        0x4
+ *(.cywolatch)
+ .cywolatch     0x90100000        0x4 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+                0x90100000                cy_meta_wonvl
+
+.cyeeprom       0x90200000        0x0
+ *(.cyeeprom)
+                0x00000001                ASSERT ((. <= ((0x90200000 + ee_offset) + ee_size)), .cyeeprom data will not fit in EEPROM)
+
+.cyflashprotect
+                0x90400000      0x100
+ *(.cyflashprotect)
+ .cyflashprotect
+                0x90400000      0x100 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+                0x90400000                cy_meta_flashprotect
+
+.cymeta         0x90500000        0xc
+ *(.cymeta)
+ .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+                0x90500000                cy_metadata
+
+.rel.dyn        0x00000a48        0x0 load address 0x9050000c
+ .rel.iplt      0x00000a48        0x0 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x770
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x80 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_aranges
+                0x00000080       0x20 .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+ .debug_aranges
+                0x000000a0       0x58 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_aranges
+                0x000000f8       0x18 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_aranges
+                0x00000110       0x48 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_aranges
+                0x00000158      0x2a0 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .debug_aranges
+                0x000003f8       0x98 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .debug_aranges
+                0x00000490       0x38 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+ .debug_aranges
+                0x000004c8       0xd8 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .debug_aranges
+                0x000005a0       0x38 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+ .debug_aranges
+                0x000005d8       0x38 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+ .debug_aranges
+                0x00000610       0x38 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+ .debug_aranges
+                0x00000648       0x20 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyBootAsmGnu.o)
+ .debug_aranges
+                0x00000668       0x88 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .debug_aranges
+                0x000006f0       0x80 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x4cf1
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0xdca .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_info    0x00000dca      0x1d5 .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+ .debug_info    0x00000f9f      0x595 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x00001534      0x135 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x00001669      0x3bb .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_info    0x00001a24     0x1374 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .debug_info    0x00002d98      0xa2a .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .debug_info    0x000037c2      0x11f .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+ .debug_info    0x000038e1      0x493 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .debug_info    0x00003d74      0x11f .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+ .debug_info    0x00003e93      0x11f .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+ .debug_info    0x00003fb2      0x11f .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+ .debug_info    0x000040d1       0x83 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyBootAsmGnu.o)
+ .debug_info    0x00004154      0x64d .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .debug_info    0x000047a1      0x550 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+
+.debug_abbrev   0x00000000     0x11c3
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x1c9 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_abbrev  0x000001c9       0xcb .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+ .debug_abbrev  0x00000294      0x20d .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_abbrev  0x000004a1       0x66 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_abbrev  0x00000507      0x1e8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_abbrev  0x000006ef      0x254 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .debug_abbrev  0x00000943      0x1ab .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .debug_abbrev  0x00000aee       0x90 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+ .debug_abbrev  0x00000b7e      0x146 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .debug_abbrev  0x00000cc4       0x90 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+ .debug_abbrev  0x00000d54       0x90 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+ .debug_abbrev  0x00000de4       0x90 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+ .debug_abbrev  0x00000e74       0x14 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00000e88      0x1a7 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .debug_abbrev  0x0000102f      0x194 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+
+.debug_line     0x00000000     0x1f16
+ *(.debug_line)
+ .debug_line    0x00000000      0x35e .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_line    0x0000035e      0x188 .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+ .debug_line    0x000004e6      0x1e9 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x000006cf      0x133 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x00000802      0x226 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_line    0x00000a28      0x816 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .debug_line    0x0000123e      0x367 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .debug_line    0x000015a5       0x99 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+ .debug_line    0x0000163e      0x234 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .debug_line    0x00001872       0x95 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+ .debug_line    0x00001907       0x97 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+ .debug_line    0x0000199e       0x98 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+ .debug_line    0x00001a36       0x66 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyBootAsmGnu.o)
+ .debug_line    0x00001a9c      0x21a .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .debug_line    0x00001cb6      0x260 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+
+.debug_frame    0x00000000     0x13a8
+ *(.debug_frame)
+ .debug_frame   0x00000000      0x1b0 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_frame   0x000001b0       0x34 .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+ .debug_frame   0x000001e4       0xe4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_frame   0x000002c8       0xb8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_frame   0x00000380      0x738 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .debug_frame   0x00000ab8      0x1f8 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .debug_frame   0x00000cb0       0x50 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+ .debug_frame   0x00000d00      0x1e8 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .debug_frame   0x00000ee8       0x50 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+ .debug_frame   0x00000f38       0x50 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+ .debug_frame   0x00000f88       0x50 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+ .debug_frame   0x00000fd8      0x194 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .debug_frame   0x0000116c      0x180 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .debug_frame   0x000012ec       0x20 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x0000130c       0x28 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x00001334       0x2c d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x00001360       0x28 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00001388       0x20 d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+
+.debug_str      0x00000000     0x18f5
+ *(.debug_str)
+ .debug_str     0x00000000      0x30c .\CortexM3\ARM_GCC_541\Debug\main.o
+                                0x371 (size before relaxing)
+ .debug_str     0x0000030c       0x50 .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+                                0x211 (size before relaxing)
+ .debug_str     0x0000035c      0x1b6 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                                0x337 (size before relaxing)
+ .debug_str     0x00000512       0x75 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+                                0x1d7 (size before relaxing)
+ .debug_str     0x00000587      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                                0x2fd (size before relaxing)
+ .debug_str     0x000006cb      0x847 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+                                0xa3a (size before relaxing)
+ .debug_str     0x00000f12      0x365 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+                                0x726 (size before relaxing)
+ .debug_str     0x00001277       0x6e .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+                                0x1ee (size before relaxing)
+ .debug_str     0x000012e5      0x28b .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+                                0x480 (size before relaxing)
+ .debug_str     0x00001570       0x5b .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+                                0x1e4 (size before relaxing)
+ .debug_str     0x000015cb       0x63 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+                                0x1ee (size before relaxing)
+ .debug_str     0x0000162e       0x67 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+                                0x1f3 (size before relaxing)
+ .debug_str     0x00001695      0x1b4 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+                                0x3b3 (size before relaxing)
+ .debug_str     0x00001849       0xac .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+                                0x32b (size before relaxing)
+
+.debug_loc      0x00000000     0x2262
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x419 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_loc     0x00000419      0x1f9 .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+ .debug_loc     0x00000612      0x25a .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_loc     0x0000086c      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_loc     0x000009b0      0xa11 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .debug_loc     0x000013c1      0x1e4 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .debug_loc     0x000015a5       0x42 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+ .debug_loc     0x000015e7       0xfe .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .debug_loc     0x000016e5       0x42 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+ .debug_loc     0x00001727       0x42 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+ .debug_loc     0x00001769       0x42 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+ .debug_loc     0x000017ab      0x3b2 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .debug_loc     0x00001b5d      0x705 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_ranges   0x00000000      0x680
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x88 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_ranges  0x00000088       0x10 .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+ .debug_ranges  0x00000098       0x48 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_ranges  0x000000e0       0x38 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_ranges  0x00000118      0x290 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .debug_ranges  0x000003a8       0x88 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .debug_ranges  0x00000430       0x28 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+ .debug_ranges  0x00000458       0xc8 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .debug_ranges  0x00000520       0x28 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+ .debug_ranges  0x00000548       0x28 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+ .debug_ranges  0x00000570       0x28 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+ .debug_ranges  0x00000598       0x78 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .debug_ranges  0x00000610       0x70 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+
+.comment        0x00000000       0x6e
+ .comment       0x00000000       0x6e .\CortexM3\ARM_GCC_541\Debug\main.o
+                                 0x6f (size before relaxing)
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+.ARM.attributes
+                0x00000000       0x29
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x1d d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+ .ARM.attributes
+                0x0000001d       0x2d d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .ARM.attributes
+                0x0000004a       0x1b d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m/crt0.o
+ .ARM.attributes
+                0x00000065       0x33 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .ARM.attributes
+                0x00000098       0x33 .\CortexM3\ARM_GCC_541\Debug\Schakelklok_gfx.o
+ .ARM.attributes
+                0x000000cb       0x33 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .ARM.attributes
+                0x000000fe       0x33 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .ARM.attributes
+                0x00000131       0x33 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .ARM.attributes
+                0x00000164       0x33 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyLib.o)
+ .ARM.attributes
+                0x00000197       0x33 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(cyPm.o)
+ .ARM.attributes
+                0x000001ca       0x33 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(o_DebugLed.o)
+ .ARM.attributes
+                0x000001fd       0x33 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(SPI_Module.o)
+ .ARM.attributes
+                0x00000230       0x33 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(DebugPin.o)
+ .ARM.attributes
+                0x00000263       0x33 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_DC.o)
+ .ARM.attributes
+                0x00000296       0x33 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(Display_RST.o)
+ .ARM.attributes
+                0x000002c9       0x21 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyBootAsmGnu.o)
+ .ARM.attributes
+                0x000002ea       0x33 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CyFlash.o)
+ .ARM.attributes
+                0x0000031d       0x33 .\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.a(CySpc.o)
+ .ARM.attributes
+                0x00000350       0x2d d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .ARM.attributes
+                0x0000037d       0x2d d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x000003aa       0x2d d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x000003d7       0x2d d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000404       0x2d d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x00000431       0x2d d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x0000045e       0x2d d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .ARM.attributes
+                0x0000048b       0x1d d:/applications/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+
+/DISCARD/
+ *(.note.GNU-stack)
+OUTPUT(D:\Files\Uni\Embedded_4\Emb4\Schak_DisplayTest.cydsn\CortexM3\ARM_GCC_541\Debug\Schak_DisplayTest.elf elf32-littlearm)

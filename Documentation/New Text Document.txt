@@ -1,0 +1,38 @@
+Digitale Schakelklok
+
+Must
+UI/UX
+	scherm 5x per seconde updaten
+	wordt ingesteld dmv keypad of joystick EN via pc
+	display: datum, tijd, toestand uitgangen
+	menu structuur voor instellen
+	huidige tijd instelbaar in u, min, sec, ms
+	schakelmomenten instelbaar in u, min, sec, ms
+	repetitief schakelpatroon instelbaar (aan voor 5u, uit voor 12u etc)
+	PC user interface, voor instelbare tijd
+	tijdens bediening loopt klok door
+
+I/O
+	schakeltijd nauwkeurigheid: +- 0.5% van ingestelde waarde (0.005ms max tolerantie)
+	softwarematig ont-denderen toetsen
+	toestanden van uitgangen onafhankelijk van elkaar
+	4 schakeluitgangen
+	schakelmomenten actief tijdens bediening
+	RTC met batterij
+
+
+
+
+
+Should
+on PSoC 5LP
+
+
+Could
+Sync systemtime from pc to input in RTC
+random schakelen van uitgangen op bepaald tijdstip
+looplicht dat start en stopt op gestelde tijden (?)
+
+
+Will not
+

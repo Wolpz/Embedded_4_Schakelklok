@@ -1,0 +1,9 @@
+[UI]
+-- GFX Library, lightweight, have to check if it fits/works on psoc5lp. No ui creation tool, uses bmp to array
+https://lvgl.io/
+
+[Display]
+-- 
+
+
+

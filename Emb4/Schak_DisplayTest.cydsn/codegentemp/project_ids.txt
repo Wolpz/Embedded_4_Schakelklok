@@ -1,0 +1,8 @@
+D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\Schakelklok.cyprj|19cd9e8e-9833-43f0-bb58-ea2fa20f4d46
+D:\Applications\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|cf13b85c-2c73-458c-a966-944c4701b3e0
+C:\Users\laure\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|3b2b671c-b57d-47f0-9f26-5e11c91e8f9d
+D:\Applications\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|4818bc20-2c41-456c-b330-60841feb3155
+D:\Applications\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|ba276d68-a2e5-4b84-b83d-fe6d26d0db58
+D:\Applications\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|b2099e63-06e5-4f2a-bfa9-559c13844d96
+D:\Files\Uni\Embedded_4\Emb4\Schak_DisplayTest.cydsn\Schak_DisplayTest.cyprj|ba9a1fd2-424d-491f-83bd-0c1939a86102
+D:\Files\Uni\Embedded_4\Emb4\Schak_RTC_Test.cydsn\Schak_RTC_Test.cyprj|75c7a637-78e4-4ea4-a76b-771fffa422d3

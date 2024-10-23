@@ -1,0 +1,1265 @@
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"cymetadata.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	cy_metadata
+  20              		.global	cy_meta_flashprotect
+  21              		.global	cy_meta_wonvl
+  22              		.global	cy_meta_custnvl
+  23              		.global	cy_meta_configecc
+  24              		.section	.cyconfigecc,"a",%progbits
+  25              		.align	2
+  26              		.type	cy_meta_configecc, %object
+  27              		.size	cy_meta_configecc, 740
+  28              	cy_meta_configecc:
+  29 0000 02       		.byte	2
+  30 0001 52       		.byte	82
+  31 0002 00       		.byte	0
+  32 0003 40       		.byte	64
+  33 0004 01       		.byte	1
+  34 0005 64       		.byte	100
+  35 0006 00       		.byte	0
+  36 0007 40       		.byte	64
+  37 0008 32       		.byte	50
+  38 0009 08       		.byte	8
+  39 000a 01       		.byte	1
+  40 000b 40       		.byte	64
+  41 000c 2F       		.byte	47
+  42 000d 09       		.byte	9
+  43 000e 01       		.byte	1
+  44 000f 40       		.byte	64
+  45 0010 39       		.byte	57
+  46 0011 0B       		.byte	11
+  47 0012 01       		.byte	1
+  48 0013 40       		.byte	64
+  49 0014 36       		.byte	54
+  50 0015 0C       		.byte	12
+  51 0016 01       		.byte	1
+  52 0017 40       		.byte	64
+  53 0018 21       		.byte	33
+  54 0019 0D       		.byte	13
+  55 001a 01       		.byte	1
+  56 001b 40       		.byte	64
+  57 001c 04       		.byte	4
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 2
+
+
+  58 001d 19       		.byte	25
+  59 001e 01       		.byte	1
+  60 001f 40       		.byte	64
+  61 0020 05       		.byte	5
+  62 0021 45       		.byte	69
+  63 0022 01       		.byte	1
+  64 0023 40       		.byte	64
+  65 0024 05       		.byte	5
+  66 0025 46       		.byte	70
+  67 0026 01       		.byte	1
+  68 0027 40       		.byte	64
+  69 0028 04       		.byte	4
+  70 0029 4C       		.byte	76
+  71 002a 01       		.byte	1
+  72 002b 40       		.byte	64
+  73 002c 03       		.byte	3
+  74 002d 50       		.byte	80
+  75 002e 01       		.byte	1
+  76 002f 40       		.byte	64
+  77 0030 10       		.byte	16
+  78 0031 1C       		.byte	28
+  79 0032 11       		.byte	17
+  80 0033 08       		.byte	8
+  81 0034 8A       		.byte	-118
+  82 0035 0F       		.byte	15
+  83 0036 80       		.byte	-128
+  84 0037 71       		.byte	113
+  85 0038 81       		.byte	-127
+  86 0039 20       		.byte	32
+  87 003a 82       		.byte	-126
+  88 003b 82       		.byte	-126
+  89 003c 83       		.byte	-125
+  90 003d D0       		.byte	-48
+  91 003e 84       		.byte	-124
+  92 003f C0       		.byte	-64
+  93 0040 85       		.byte	-123
+  94 0041 29       		.byte	41
+  95 0042 86       		.byte	-122
+  96 0043 2F       		.byte	47
+  97 0044 87       		.byte	-121
+  98 0045 46       		.byte	70
+  99 0046 88       		.byte	-120
+ 100 0047 A4       		.byte	-92
+ 101 0048 89       		.byte	-119
+ 102 0049 D0       		.byte	-48
+ 103 004a 8A       		.byte	-118
+ 104 004b 40       		.byte	64
+ 105 004c 8B       		.byte	-117
+ 106 004d 06       		.byte	6
+ 107 004e 8C       		.byte	-116
+ 108 004f 6C       		.byte	108
+ 109 0050 8D       		.byte	-115
+ 110 0051 D6       		.byte	-42
+ 111 0052 90       		.byte	-112
+ 112 0053 2C       		.byte	44
+ 113 0054 91       		.byte	-111
+ 114 0055 D6       		.byte	-42
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 3
+
+
+ 115 0056 92       		.byte	-110
+ 116 0057 40       		.byte	64
+ 117 0058 94       		.byte	-108
+ 118 0059 40       		.byte	64
+ 119 005a 95       		.byte	-107
+ 120 005b 21       		.byte	33
+ 121 005c 96       		.byte	-106
+ 122 005d 2C       		.byte	44
+ 123 005e 97       		.byte	-105
+ 124 005f 8E       		.byte	-114
+ 125 0060 98       		.byte	-104
+ 126 0061 91       		.byte	-111
+ 127 0062 99       		.byte	-103
+ 128 0063 D2       		.byte	-46
+ 129 0064 9A       		.byte	-102
+ 130 0065 4E       		.byte	78
+ 131 0066 9B       		.byte	-101
+ 132 0067 04       		.byte	4
+ 133 0068 9C       		.byte	-100
+ 134 0069 6C       		.byte	108
+ 135 006a 9D       		.byte	-99
+ 136 006b D6       		.byte	-42
+ 137 006c A0       		.byte	-96
+ 138 006d 08       		.byte	8
+ 139 006e A1       		.byte	-95
+ 140 006f 17       		.byte	23
+ 141 0070 A2       		.byte	-94
+ 142 0071 10       		.byte	16
+ 143 0072 A3       		.byte	-93
+ 144 0073 28       		.byte	40
+ 145 0074 A4       		.byte	-92
+ 146 0075 64       		.byte	100
+ 147 0076 A6       		.byte	-90
+ 148 0077 08       		.byte	8
+ 149 0078 A9       		.byte	-87
+ 150 0079 02       		.byte	2
+ 151 007a AD       		.byte	-83
+ 152 007b 04       		.byte	4
+ 153 007c B2       		.byte	-78
+ 154 007d C0       		.byte	-64
+ 155 007e B4       		.byte	-76
+ 156 007f 31       		.byte	49
+ 157 0080 B5       		.byte	-75
+ 158 0081 0F       		.byte	15
+ 159 0082 B6       		.byte	-74
+ 160 0083 0F       		.byte	15
+ 161 0084 B7       		.byte	-73
+ 162 0085 F0       		.byte	-16
+ 163 0086 B9       		.byte	-71
+ 164 0087 20       		.byte	32
+ 165 0088 BA       		.byte	-70
+ 166 0089 38       		.byte	56
+ 167 008a BB       		.byte	-69
+ 168 008b 80       		.byte	-128
+ 169 008c D4       		.byte	-44
+ 170 008d 09       		.byte	9
+ 171 008e D8       		.byte	-40
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 4
+
+
+ 172 008f 04       		.byte	4
+ 173 0090 D9       		.byte	-39
+ 174 0091 04       		.byte	4
+ 175 0092 DB       		.byte	-37
+ 176 0093 04       		.byte	4
+ 177 0094 DC       		.byte	-36
+ 178 0095 99       		.byte	-103
+ 179 0096 DD       		.byte	-35
+ 180 0097 90       		.byte	-112
+ 181 0098 DF       		.byte	-33
+ 182 0099 01       		.byte	1
+ 183 009a 00       		.byte	0
+ 184 009b 80       		.byte	-128
+ 185 009c 03       		.byte	3
+ 186 009d A8       		.byte	-88
+ 187 009e 0A       		.byte	10
+ 188 009f 51       		.byte	81
+ 189 00a0 0B       		.byte	11
+ 190 00a1 04       		.byte	4
+ 191 00a2 10       		.byte	16
+ 192 00a3 20       		.byte	32
+ 193 00a4 12       		.byte	18
+ 194 00a5 C0       		.byte	-64
+ 195 00a6 19       		.byte	25
+ 196 00a7 60       		.byte	96
+ 197 00a8 1A       		.byte	26
+ 198 00a9 08       		.byte	8
+ 199 00aa 1B       		.byte	27
+ 200 00ab AC       		.byte	-84
+ 201 00ac 20       		.byte	32
+ 202 00ad 0C       		.byte	12
+ 203 00ae 23       		.byte	35
+ 204 00af 05       		.byte	5
+ 205 00b0 2A       		.byte	42
+ 206 00b1 40       		.byte	64
+ 207 00b2 2B       		.byte	43
+ 208 00b3 84       		.byte	-124
+ 209 00b4 30       		.byte	48
+ 210 00b5 20       		.byte	32
+ 211 00b6 32       		.byte	50
+ 212 00b7 04       		.byte	4
+ 213 00b8 33       		.byte	51
+ 214 00b9 41       		.byte	65
+ 215 00ba 38       		.byte	56
+ 216 00bb 84       		.byte	-124
+ 217 00bc 39       		.byte	57
+ 218 00bd 10       		.byte	16
+ 219 00be 3B       		.byte	59
+ 220 00bf 01       		.byte	1
+ 221 00c0 59       		.byte	89
+ 222 00c1 14       		.byte	20
+ 223 00c2 5A       		.byte	90
+ 224 00c3 82       		.byte	-126
+ 225 00c4 60       		.byte	96
+ 226 00c5 02       		.byte	2
+ 227 00c6 90       		.byte	-112
+ 228 00c7 80       		.byte	-128
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 5
+
+
+ 229 00c8 91       		.byte	-111
+ 230 00c9 10       		.byte	16
+ 231 00ca 92       		.byte	-110
+ 232 00cb D3       		.byte	-45
+ 233 00cc 94       		.byte	-108
+ 234 00cd 04       		.byte	4
+ 235 00ce 96       		.byte	-106
+ 236 00cf 08       		.byte	8
+ 237 00d0 97       		.byte	-105
+ 238 00d1 04       		.byte	4
+ 239 00d2 98       		.byte	-104
+ 240 00d3 02       		.byte	2
+ 241 00d4 99       		.byte	-103
+ 242 00d5 04       		.byte	4
+ 243 00d6 9A       		.byte	-102
+ 244 00d7 40       		.byte	64
+ 245 00d8 9B       		.byte	-101
+ 246 00d9 41       		.byte	65
+ 247 00da 9C       		.byte	-100
+ 248 00db 20       		.byte	32
+ 249 00dc 9D       		.byte	-99
+ 250 00dd 60       		.byte	96
+ 251 00de A0       		.byte	-96
+ 252 00df 60       		.byte	96
+ 253 00e0 A4       		.byte	-92
+ 254 00e1 04       		.byte	4
+ 255 00e2 A7       		.byte	-89
+ 256 00e3 AC       		.byte	-84
+ 257 00e4 A8       		.byte	-88
+ 258 00e5 02       		.byte	2
+ 259 00e6 AA       		.byte	-86
+ 260 00e7 20       		.byte	32
+ 261 00e8 C0       		.byte	-64
+ 262 00e9 0F       		.byte	15
+ 263 00ea C2       		.byte	-62
+ 264 00eb 0F       		.byte	15
+ 265 00ec C4       		.byte	-60
+ 266 00ed 0C       		.byte	12
+ 267 00ee CA       		.byte	-54
+ 268 00ef 0D       		.byte	13
+ 269 00f0 CC       		.byte	-52
+ 270 00f1 0F       		.byte	15
+ 271 00f2 CE       		.byte	-50
+ 272 00f3 0F       		.byte	15
+ 273 00f4 D6       		.byte	-42
+ 274 00f5 0F       		.byte	15
+ 275 00f6 D8       		.byte	-40
+ 276 00f7 08       		.byte	8
+ 277 00f8 00       		.byte	0
+ 278 00f9 44       		.byte	68
+ 279 00fa 02       		.byte	2
+ 280 00fb 80       		.byte	-128
+ 281 00fc 03       		.byte	3
+ 282 00fd 88       		.byte	-120
+ 283 00fe 0A       		.byte	10
+ 284 00ff 59       		.byte	89
+ 285 0100 10       		.byte	16
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 6
+
+
+ 286 0101 22       		.byte	34
+ 287 0102 11       		.byte	17
+ 288 0103 01       		.byte	1
+ 289 0104 19       		.byte	25
+ 290 0105 08       		.byte	8
+ 291 0106 20       		.byte	32
+ 292 0107 50       		.byte	80
+ 293 0108 22       		.byte	34
+ 294 0109 62       		.byte	98
+ 295 010a 29       		.byte	41
+ 296 010b 48       		.byte	72
+ 297 010c 2A       		.byte	42
+ 298 010d 02       		.byte	2
+ 299 010e 2B       		.byte	43
+ 300 010f 04       		.byte	4
+ 301 0110 30       		.byte	48
+ 302 0111 20       		.byte	32
+ 303 0112 32       		.byte	50
+ 304 0113 06       		.byte	6
+ 305 0114 33       		.byte	51
+ 306 0115 40       		.byte	64
+ 307 0116 38       		.byte	56
+ 308 0117 16       		.byte	22
+ 309 0118 39       		.byte	57
+ 310 0119 40       		.byte	64
+ 311 011a 40       		.byte	64
+ 312 011b 20       		.byte	32
+ 313 011c 43       		.byte	67
+ 314 011d A0       		.byte	-96
+ 315 011e 48       		.byte	72
+ 316 011f 04       		.byte	4
+ 317 0120 49       		.byte	73
+ 318 0121 84       		.byte	-124
+ 319 0122 50       		.byte	80
+ 320 0123 0B       		.byte	11
+ 321 0124 52       		.byte	82
+ 322 0125 50       		.byte	80
+ 323 0126 61       		.byte	97
+ 324 0127 08       		.byte	8
+ 325 0128 68       		.byte	104
+ 326 0129 60       		.byte	96
+ 327 012a 69       		.byte	105
+ 328 012b 51       		.byte	81
+ 329 012c 6A       		.byte	106
+ 330 012d 54       		.byte	84
+ 331 012e 6B       		.byte	107
+ 332 012f 41       		.byte	65
+ 333 0130 70       		.byte	112
+ 334 0131 40       		.byte	64
+ 335 0132 72       		.byte	114
+ 336 0133 03       		.byte	3
+ 337 0134 92       		.byte	-110
+ 338 0135 02       		.byte	2
+ 339 0136 94       		.byte	-108
+ 340 0137 04       		.byte	4
+ 341 0138 95       		.byte	-107
+ 342 0139 01       		.byte	1
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 7
+
+
+ 343 013a 96       		.byte	-106
+ 344 013b 55       		.byte	85
+ 345 013c 97       		.byte	-105
+ 346 013d 04       		.byte	4
+ 347 013e 99       		.byte	-103
+ 348 013f 80       		.byte	-128
+ 349 0140 9D       		.byte	-99
+ 350 0141 60       		.byte	96
+ 351 0142 9E       		.byte	-98
+ 352 0143 10       		.byte	16
+ 353 0144 A1       		.byte	-95
+ 354 0145 08       		.byte	8
+ 355 0146 A4       		.byte	-92
+ 356 0147 0A       		.byte	10
+ 357 0148 A6       		.byte	-90
+ 358 0149 80       		.byte	-128
+ 359 014a A7       		.byte	-89
+ 360 014b 20       		.byte	32
+ 361 014c A8       		.byte	-88
+ 362 014d 08       		.byte	8
+ 363 014e AB       		.byte	-85
+ 364 014f 01       		.byte	1
+ 365 0150 AD       		.byte	-83
+ 366 0151 01       		.byte	1
+ 367 0152 B3       		.byte	-77
+ 368 0153 10       		.byte	16
+ 369 0154 B6       		.byte	-74
+ 370 0155 04       		.byte	4
+ 371 0156 C0       		.byte	-64
+ 372 0157 0F       		.byte	15
+ 373 0158 C2       		.byte	-62
+ 374 0159 0F       		.byte	15
+ 375 015a C4       		.byte	-60
+ 376 015b 0D       		.byte	13
+ 377 015c CA       		.byte	-54
+ 378 015d 0F       		.byte	15
+ 379 015e CC       		.byte	-52
+ 380 015f 0F       		.byte	15
+ 381 0160 CE       		.byte	-50
+ 382 0161 0F       		.byte	15
+ 383 0162 D0       		.byte	-48
+ 384 0163 0E       		.byte	14
+ 385 0164 D2       		.byte	-46
+ 386 0165 0C       		.byte	12
+ 387 0166 D8       		.byte	-40
+ 388 0167 02       		.byte	2
+ 389 0168 EC       		.byte	-20
+ 390 0169 02       		.byte	2
+ 391 016a 04       		.byte	4
+ 392 016b 03       		.byte	3
+ 393 016c 06       		.byte	6
+ 394 016d 2C       		.byte	44
+ 395 016e 08       		.byte	8
+ 396 016f 35       		.byte	53
+ 397 0170 0A       		.byte	10
+ 398 0171 02       		.byte	2
+ 399 0172 0C       		.byte	12
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 8
+
+
+ 400 0173 01       		.byte	1
+ 401 0174 0E       		.byte	14
+ 402 0175 1E       		.byte	30
+ 403 0176 14       		.byte	20
+ 404 0177 04       		.byte	4
+ 405 0178 16       		.byte	22
+ 406 0179 03       		.byte	3
+ 407 017a 1A       		.byte	26
+ 408 017b 08       		.byte	8
+ 409 017c 32       		.byte	50
+ 410 017d 07       		.byte	7
+ 411 017e 34       		.byte	52
+ 412 017f 38       		.byte	56
+ 413 0180 3A       		.byte	58
+ 414 0181 08       		.byte	8
+ 415 0182 58       		.byte	88
+ 416 0183 04       		.byte	4
+ 417 0184 5C       		.byte	92
+ 418 0185 09       		.byte	9
+ 419 0186 5F       		.byte	95
+ 420 0187 01       		.byte	1
+ 421 0188 80       		.byte	-128
+ 422 0189 03       		.byte	3
+ 423 018a 81       		.byte	-127
+ 424 018b 37       		.byte	55
+ 425 018c 84       		.byte	-124
+ 426 018d 20       		.byte	32
+ 427 018e 85       		.byte	-123
+ 428 018f 08       		.byte	8
+ 429 0190 86       		.byte	-122
+ 430 0191 0C       		.byte	12
+ 431 0192 87       		.byte	-121
+ 432 0193 22       		.byte	34
+ 433 0194 8A       		.byte	-118
+ 434 0195 04       		.byte	4
+ 435 0196 8E       		.byte	-114
+ 436 0197 30       		.byte	48
+ 437 0198 8F       		.byte	-113
+ 438 0199 07       		.byte	7
+ 439 019a 92       		.byte	-110
+ 440 019b 03       		.byte	3
+ 441 019c 94       		.byte	-108
+ 442 019d 03       		.byte	3
+ 443 019e 98       		.byte	-104
+ 444 019f 03       		.byte	3
+ 445 01a0 99       		.byte	-103
+ 446 01a1 14       		.byte	20
+ 447 01a2 9B       		.byte	-101
+ 448 01a3 08       		.byte	8
+ 449 01a4 9C       		.byte	-100
+ 450 01a5 03       		.byte	3
+ 451 01a6 A0       		.byte	-96
+ 452 01a7 04       		.byte	4
+ 453 01a8 A2       		.byte	-94
+ 454 01a9 08       		.byte	8
+ 455 01aa A4       		.byte	-92
+ 456 01ab 10       		.byte	16
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 9
+
+
+ 457 01ac A6       		.byte	-90
+ 458 01ad 0C       		.byte	12
+ 459 01ae AA       		.byte	-86
+ 460 01af 01       		.byte	1
+ 461 01b0 AD       		.byte	-83
+ 462 01b1 09       		.byte	9
+ 463 01b2 AE       		.byte	-82
+ 464 01b3 48       		.byte	72
+ 465 01b4 AF       		.byte	-81
+ 466 01b5 10       		.byte	16
+ 467 01b6 B0       		.byte	-80
+ 468 01b7 3C       		.byte	60
+ 469 01b8 B1       		.byte	-79
+ 470 01b9 38       		.byte	56
+ 471 01ba B2       		.byte	-78
+ 472 01bb 40       		.byte	64
+ 473 01bc B3       		.byte	-77
+ 474 01bd 07       		.byte	7
+ 475 01be B4       		.byte	-76
+ 476 01bf 01       		.byte	1
+ 477 01c0 B6       		.byte	-74
+ 478 01c1 02       		.byte	2
+ 479 01c2 B9       		.byte	-71
+ 480 01c3 02       		.byte	2
+ 481 01c4 BE       		.byte	-66
+ 482 01c5 50       		.byte	80
+ 483 01c6 BF       		.byte	-65
+ 484 01c7 04       		.byte	4
+ 485 01c8 D4       		.byte	-44
+ 486 01c9 40       		.byte	64
+ 487 01ca D8       		.byte	-40
+ 488 01cb 04       		.byte	4
+ 489 01cc D9       		.byte	-39
+ 490 01cd 04       		.byte	4
+ 491 01ce DB       		.byte	-37
+ 492 01cf 04       		.byte	4
+ 493 01d0 DC       		.byte	-36
+ 494 01d1 99       		.byte	-103
+ 495 01d2 DD       		.byte	-35
+ 496 01d3 90       		.byte	-112
+ 497 01d4 DF       		.byte	-33
+ 498 01d5 01       		.byte	1
+ 499 01d6 00       		.byte	0
+ 500 01d7 40       		.byte	64
+ 501 01d8 01       		.byte	1
+ 502 01d9 01       		.byte	1
+ 503 01da 03       		.byte	3
+ 504 01db 28       		.byte	40
+ 505 01dc 04       		.byte	4
+ 506 01dd 04       		.byte	4
+ 507 01de 05       		.byte	5
+ 508 01df 60       		.byte	96
+ 509 01e0 0A       		.byte	10
+ 510 01e1 55       		.byte	85
+ 511 01e2 0D       		.byte	13
+ 512 01e3 08       		.byte	8
+ 513 01e4 0E       		.byte	14
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 10
+
+
+ 514 01e5 08       		.byte	8
+ 515 01e6 10       		.byte	16
+ 516 01e7 0A       		.byte	10
+ 517 01e8 12       		.byte	18
+ 518 01e9 80       		.byte	-128
+ 519 01ea 13       		.byte	19
+ 520 01eb 04       		.byte	4
+ 521 01ec 18       		.byte	24
+ 522 01ed 40       		.byte	64
+ 523 01ee 19       		.byte	25
+ 524 01ef 80       		.byte	-128
+ 525 01f0 1A       		.byte	26
+ 526 01f1 02       		.byte	2
+ 527 01f2 1B       		.byte	27
+ 528 01f3 18       		.byte	24
+ 529 01f4 1D       		.byte	29
+ 530 01f5 08       		.byte	8
+ 531 01f6 1E       		.byte	30
+ 532 01f7 08       		.byte	8
+ 533 01f8 21       		.byte	33
+ 534 01f9 01       		.byte	1
+ 535 01fa 23       		.byte	35
+ 536 01fb 10       		.byte	16
+ 537 01fc 29       		.byte	41
+ 538 01fd 40       		.byte	64
+ 539 01fe 33       		.byte	51
+ 540 01ff 20       		.byte	32
+ 541 0200 38       		.byte	56
+ 542 0201 40       		.byte	64
+ 543 0202 39       		.byte	57
+ 544 0203 02       		.byte	2
+ 545 0204 3B       		.byte	59
+ 546 0205 04       		.byte	4
+ 547 0206 62       		.byte	98
+ 548 0207 10       		.byte	16
+ 549 0208 63       		.byte	99
+ 550 0209 21       		.byte	33
+ 551 020a C0       		.byte	-64
+ 552 020b EF       		.byte	-17
+ 553 020c C2       		.byte	-62
+ 554 020d 6F       		.byte	111
+ 555 020e C4       		.byte	-60
+ 556 020f 0F       		.byte	15
+ 557 0210 CA       		.byte	-54
+ 558 0211 08       		.byte	8
+ 559 0212 CC       		.byte	-52
+ 560 0213 04       		.byte	4
+ 561 0214 CE       		.byte	-50
+ 562 0215 0B       		.byte	11
+ 563 0216 D8       		.byte	-40
+ 564 0217 0E       		.byte	14
+ 565 0218 AC       		.byte	-84
+ 566 0219 20       		.byte	32
+ 567 021a B5       		.byte	-75
+ 568 021b 10       		.byte	16
+ 569 021c B6       		.byte	-74
+ 570 021d 80       		.byte	-128
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 11
+
+
+ 571 021e EE       		.byte	-18
+ 572 021f 08       		.byte	8
+ 573 0220 56       		.byte	86
+ 574 0221 02       		.byte	2
+ 575 0222 57       		.byte	87
+ 576 0223 08       		.byte	8
+ 577 0224 5E       		.byte	94
+ 578 0225 01       		.byte	1
+ 579 0226 D4       		.byte	-44
+ 580 0227 02       		.byte	2
+ 581 0228 D6       		.byte	-42
+ 582 0229 05       		.byte	5
+ 583 022a AF       		.byte	-81
+ 584 022b 08       		.byte	8
+ 585 022c B2       		.byte	-78
+ 586 022d 01       		.byte	1
+ 587 022e B6       		.byte	-74
+ 588 022f 02       		.byte	2
+ 589 0230 E8       		.byte	-24
+ 590 0231 02       		.byte	2
+ 591 0232 EC       		.byte	-20
+ 592 0233 01       		.byte	1
+ 593 0234 0F       		.byte	15
+ 594 0235 02       		.byte	2
+ 595 0236 A7       		.byte	-89
+ 596 0237 01       		.byte	1
+ 597 0238 AF       		.byte	-81
+ 598 0239 01       		.byte	1
+ 599 023a C2       		.byte	-62
+ 600 023b 01       		.byte	1
+ 601 023c 01       		.byte	1
+ 602 023d 01       		.byte	1
+ 603 023e 0D       		.byte	13
+ 604 023f 01       		.byte	1
+ 605 0240 0F       		.byte	15
+ 606 0241 01       		.byte	1
+ 607 0242 00       		.byte	0
+ 608 0243 00       		.byte	0
+ 609 0244 1F       		.byte	31
+ 610 0245 10       		.byte	16
+ 611 0246 20       		.byte	32
+ 612 0247 00       		.byte	0
+ 613 0248 00       		.byte	0
+ 614 0249 88       		.byte	-120
+ 615 024a FF       		.byte	-1
+ 616 024b 21       		.byte	33
+ 617 024c 80       		.byte	-128
+ 618 024d 40       		.byte	64
+ 619 024e 00       		.byte	0
+ 620 024f 00       		.byte	0
+ 621 0250 00       		.byte	0
+ 622 0251 01       		.byte	1
+ 623 0252 60       		.byte	96
+ 624 0253 00       		.byte	0
+ 625 0254 90       		.byte	-112
+ 626 0255 04       		.byte	4
+ 627 0256 40       		.byte	64
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 12
+
+
+ 628 0257 00       		.byte	0
+ 629 0258 C0       		.byte	-64
+ 630 0259 A2       		.byte	-94
+ 631 025a 08       		.byte	8
+ 632 025b 08       		.byte	8
+ 633 025c 7F       		.byte	127
+ 634 025d 01       		.byte	1
+ 635 025e 80       		.byte	-128
+ 636 025f 00       		.byte	0
+ 637 0260 C0       		.byte	-64
+ 638 0261 01       		.byte	1
+ 639 0262 01       		.byte	1
+ 640 0263 00       		.byte	0
+ 641 0264 C0       		.byte	-64
+ 642 0265 01       		.byte	1
+ 643 0266 02       		.byte	2
+ 644 0267 00       		.byte	0
+ 645 0268 C0       		.byte	-64
+ 646 0269 40       		.byte	64
+ 647 026a 04       		.byte	4
+ 648 026b 00       		.byte	0
+ 649 026c 00       		.byte	0
+ 650 026d 01       		.byte	1
+ 651 026e 00       		.byte	0
+ 652 026f 00       		.byte	0
+ 653 0270 00       		.byte	0
+ 654 0271 87       		.byte	-121
+ 655 0272 9F       		.byte	-97
+ 656 0273 18       		.byte	24
+ 657 0274 00       		.byte	0
+ 658 0275 40       		.byte	64
+ 659 0276 FF       		.byte	-1
+ 660 0277 3F       		.byte	63
+ 661 0278 00       		.byte	0
+ 662 0279 80       		.byte	-128
+ 663 027a 00       		.byte	0
+ 664 027b 08       		.byte	8
+ 665 027c 00       		.byte	0
+ 666 027d 0A       		.byte	10
+ 667 027e 00       		.byte	0
+ 668 027f 00       		.byte	0
+ 669 0280 00       		.byte	0
+ 670 0281 00       		.byte	0
+ 671 0282 04       		.byte	4
+ 672 0283 54       		.byte	84
+ 673 0284 62       		.byte	98
+ 674 0285 01       		.byte	1
+ 675 0286 50       		.byte	80
+ 676 0287 00       		.byte	0
+ 677 0288 03       		.byte	3
+ 678 0289 0E       		.byte	14
+ 679 028a FC       		.byte	-4
+ 680 028b BD       		.byte	-67
+ 681 028c 3D       		.byte	61
+ 682 028d FF       		.byte	-1
+ 683 028e FF       		.byte	-1
+ 684 028f FF       		.byte	-1
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 13
+
+
+ 685 0290 22       		.byte	34
+ 686 0291 00       		.byte	0
+ 687 0292 F0       		.byte	-16
+ 688 0293 08       		.byte	8
+ 689 0294 04       		.byte	4
+ 690 0295 00       		.byte	0
+ 691 0296 00       		.byte	0
+ 692 0297 00       		.byte	0
+ 693 0298 00       		.byte	0
+ 694 0299 00       		.byte	0
+ 695 029a 02       		.byte	2
+ 696 029b 28       		.byte	40
+ 697 029c 04       		.byte	4
+ 698 029d 04       		.byte	4
+ 699 029e 04       		.byte	4
+ 700 029f 04       		.byte	4
+ 701 02a0 90       		.byte	-112
+ 702 02a1 99       		.byte	-103
+ 703 02a2 00       		.byte	0
+ 704 02a3 01       		.byte	1
+ 705 02a4 00       		.byte	0
+ 706 02a5 00       		.byte	0
+ 707 02a6 C0       		.byte	-64
+ 708 02a7 00       		.byte	0
+ 709 02a8 40       		.byte	64
+ 710 02a9 01       		.byte	1
+ 711 02aa 10       		.byte	16
+ 712 02ab 11       		.byte	17
+ 713 02ac C0       		.byte	-64
+ 714 02ad 01       		.byte	1
+ 715 02ae 00       		.byte	0
+ 716 02af 11       		.byte	17
+ 717 02b0 40       		.byte	64
+ 718 02b1 01       		.byte	1
+ 719 02b2 40       		.byte	64
+ 720 02b3 01       		.byte	1
+ 721 02b4 00       		.byte	0
+ 722 02b5 00       		.byte	0
+ 723 02b6 00       		.byte	0
+ 724 02b7 00       		.byte	0
+ 725 02b8 00       		.byte	0
+ 726 02b9 00       		.byte	0
+ 727 02ba 00       		.byte	0
+ 728 02bb 00       		.byte	0
+ 729 02bc 00       		.byte	0
+ 730 02bd 00       		.byte	0
+ 731 02be 00       		.byte	0
+ 732 02bf 00       		.byte	0
+ 733 02c0 00       		.byte	0
+ 734 02c1 00       		.byte	0
+ 735 02c2 00       		.byte	0
+ 736 02c3 00       		.byte	0
+ 737 02c4 07       		.byte	7
+ 738 02c5 00       		.byte	0
+ 739 02c6 00       		.byte	0
+ 740 02c7 07       		.byte	7
+ 741 02c8 00       		.byte	0
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 14
+
+
+ 742 02c9 00       		.byte	0
+ 743 02ca 00       		.byte	0
+ 744 02cb 00       		.byte	0
+ 745 02cc 00       		.byte	0
+ 746 02cd 00       		.byte	0
+ 747 02ce 00       		.byte	0
+ 748 02cf 00       		.byte	0
+ 749 02d0 80       		.byte	-128
+ 750 02d1 0B       		.byte	11
+ 751 02d2 0B       		.byte	11
+ 752 02d3 00       		.byte	0
+ 753 02d4 00       		.byte	0
+ 754 02d5 00       		.byte	0
+ 755 02d6 00       		.byte	0
+ 756 02d7 00       		.byte	0
+ 757 02d8 04       		.byte	4
+ 758 02d9 00       		.byte	0
+ 759 02da 01       		.byte	1
+ 760 02db 3F       		.byte	63
+ 761 02dc 3A       		.byte	58
+ 762 02dd 00       		.byte	0
+ 763 02de 1C       		.byte	28
+ 764 02df 00       		.byte	0
+ 765 02e0 00       		.byte	0
+ 766 02e1 00       		.byte	0
+ 767 02e2 00       		.byte	0
+ 768 02e3 00       		.byte	0
+ 769              		.section	.cywolatch,"a",%progbits
+ 770              		.align	2
+ 771              		.type	cy_meta_wonvl, %object
+ 772              		.size	cy_meta_wonvl, 4
+ 773              	cy_meta_wonvl:
+ 774 0000 BC       		.byte	-68
+ 775 0001 90       		.byte	-112
+ 776 0002 AC       		.byte	-84
+ 777 0003 AF       		.byte	-81
+ 778              		.section	.cycustnvl,"a",%progbits
+ 779              		.align	2
+ 780              		.type	cy_meta_custnvl, %object
+ 781              		.size	cy_meta_custnvl, 4
+ 782              	cy_meta_custnvl:
+ 783 0000 00       		.byte	0
+ 784 0001 00       		.byte	0
+ 785 0002 40       		.byte	64
+ 786 0003 05       		.byte	5
+ 787              		.section	.cymeta,"a",%progbits
+ 788              		.align	2
+ 789              		.type	cy_metadata, %object
+ 790              		.size	cy_metadata, 12
+ 791              	cy_metadata:
+ 792 0000 00       		.byte	0
+ 793 0001 01       		.byte	1
+ 794 0002 2E       		.byte	46
+ 795 0003 16       		.byte	22
+ 796 0004 10       		.byte	16
+ 797 0005 69       		.byte	105
+ 798 0006 00       		.byte	0
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 15
+
+
+ 799 0007 01       		.byte	1
+ 800 0008 00       		.byte	0
+ 801 0009 00       		.byte	0
+ 802 000a 00       		.byte	0
+ 803 000b 00       		.byte	0
+ 804              		.section	.cyflashprotect,"a",%progbits
+ 805              		.align	2
+ 806              		.type	cy_meta_flashprotect, %object
+ 807              		.size	cy_meta_flashprotect, 256
+ 808              	cy_meta_flashprotect:
+ 809 0000 00000000 		.space	256
+ 809      00000000 
+ 809      00000000 
+ 809      00000000 
+ 809      00000000 
+ 810              		.text
+ 811              	.Letext0:
+ 812              		.file 1 "d:\\applications\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-
+ 813              		.file 2 "d:\\applications\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-
+ 814              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
+ 815              		.section	.debug_info,"",%progbits
+ 816              	.Ldebug_info0:
+ 817 0000 31010000 		.4byte	0x131
+ 818 0004 0400     		.2byte	0x4
+ 819 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 820 000a 04       		.byte	0x4
+ 821 000b 01       		.uleb128 0x1
+ 822 000c 59000000 		.4byte	.LASF17
+ 823 0010 0C       		.byte	0xc
+ 824 0011 B3010000 		.4byte	.LASF18
+ 825 0015 0A000000 		.4byte	.LASF19
+ 826 0019 00000000 		.4byte	.Ldebug_line0
+ 827 001d 02       		.uleb128 0x2
+ 828 001e 01       		.byte	0x1
+ 829 001f 06       		.byte	0x6
+ 830 0020 A7010000 		.4byte	.LASF0
+ 831 0024 03       		.uleb128 0x3
+ 832 0025 00000000 		.4byte	.LASF9
+ 833 0029 01       		.byte	0x1
+ 834 002a 1D       		.byte	0x1d
+ 835 002b 2F000000 		.4byte	0x2f
+ 836 002f 02       		.uleb128 0x2
+ 837 0030 01       		.byte	0x1
+ 838 0031 08       		.byte	0x8
+ 839 0032 4B000000 		.4byte	.LASF1
+ 840 0036 02       		.uleb128 0x2
+ 841 0037 02       		.byte	0x2
+ 842 0038 05       		.byte	0x5
+ 843 0039 94010000 		.4byte	.LASF2
+ 844 003d 02       		.uleb128 0x2
+ 845 003e 02       		.byte	0x2
+ 846 003f 07       		.byte	0x7
+ 847 0040 F9000000 		.4byte	.LASF3
+ 848 0044 02       		.uleb128 0x2
+ 849 0045 04       		.byte	0x4
+ 850 0046 05       		.byte	0x5
+ 851 0047 9E010000 		.4byte	.LASF4
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 16
+
+
+ 852 004b 02       		.uleb128 0x2
+ 853 004c 04       		.byte	0x4
+ 854 004d 07       		.byte	0x7
+ 855 004e E7000000 		.4byte	.LASF5
+ 856 0052 02       		.uleb128 0x2
+ 857 0053 08       		.byte	0x8
+ 858 0054 05       		.byte	0x5
+ 859 0055 86010000 		.4byte	.LASF6
+ 860 0059 02       		.uleb128 0x2
+ 861 005a 08       		.byte	0x8
+ 862 005b 07       		.byte	0x7
+ 863 005c 3B010000 		.4byte	.LASF7
+ 864 0060 04       		.uleb128 0x4
+ 865 0061 04       		.byte	0x4
+ 866 0062 05       		.byte	0x5
+ 867 0063 696E7400 		.ascii	"int\000"
+ 868 0067 02       		.uleb128 0x2
+ 869 0068 04       		.byte	0x4
+ 870 0069 07       		.byte	0x7
+ 871 006a 2E010000 		.4byte	.LASF8
+ 872 006e 03       		.uleb128 0x3
+ 873 006f 52010000 		.4byte	.LASF10
+ 874 0073 02       		.byte	0x2
+ 875 0074 18       		.byte	0x18
+ 876 0075 24000000 		.4byte	0x24
+ 877 0079 05       		.uleb128 0x5
+ 878 007a 91000000 		.4byte	0x91
+ 879 007e 8A000000 		.4byte	0x8a
+ 880 0082 06       		.uleb128 0x6
+ 881 0083 8A000000 		.4byte	0x8a
+ 882 0087 E302     		.2byte	0x2e3
+ 883 0089 00       		.byte	0
+ 884 008a 02       		.uleb128 0x2
+ 885 008b 04       		.byte	0x4
+ 886 008c 07       		.byte	0x7
+ 887 008d 7D010000 		.4byte	.LASF11
+ 888 0091 07       		.uleb128 0x7
+ 889 0092 6E000000 		.4byte	0x6e
+ 890 0096 08       		.uleb128 0x8
+ 891 0097 1C010000 		.4byte	.LASF12
+ 892 009b 03       		.byte	0x3
+ 893 009c 1F       		.byte	0x1f
+ 894 009d A7000000 		.4byte	0xa7
+ 895 00a1 05       		.uleb128 0x5
+ 896 00a2 03       		.byte	0x3
+ 897 00a3 00000000 		.4byte	cy_meta_configecc
+ 898 00a7 07       		.uleb128 0x7
+ 899 00a8 79000000 		.4byte	0x79
+ 900 00ac 05       		.uleb128 0x5
+ 901 00ad 91000000 		.4byte	0x91
+ 902 00b1 BC000000 		.4byte	0xbc
+ 903 00b5 09       		.uleb128 0x9
+ 904 00b6 8A000000 		.4byte	0x8a
+ 905 00ba 03       		.byte	0x3
+ 906 00bb 00       		.byte	0
+ 907 00bc 08       		.uleb128 0x8
+ 908 00bd 0C010000 		.4byte	.LASF13
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 17
+
+
+ 909 00c1 03       		.byte	0x3
+ 910 00c2 89       		.byte	0x89
+ 911 00c3 CD000000 		.4byte	0xcd
+ 912 00c7 05       		.uleb128 0x5
+ 913 00c8 03       		.byte	0x3
+ 914 00c9 00000000 		.4byte	cy_meta_custnvl
+ 915 00cd 07       		.uleb128 0x7
+ 916 00ce AC000000 		.4byte	0xac
+ 917 00d2 08       		.uleb128 0x8
+ 918 00d3 6F010000 		.4byte	.LASF14
+ 919 00d7 03       		.byte	0x3
+ 920 00d8 97       		.byte	0x97
+ 921 00d9 E3000000 		.4byte	0xe3
+ 922 00dd 05       		.uleb128 0x5
+ 923 00de 03       		.byte	0x3
+ 924 00df 00000000 		.4byte	cy_meta_wonvl
+ 925 00e3 07       		.uleb128 0x7
+ 926 00e4 AC000000 		.4byte	0xac
+ 927 00e8 05       		.uleb128 0x5
+ 928 00e9 91000000 		.4byte	0x91
+ 929 00ed F8000000 		.4byte	0xf8
+ 930 00f1 09       		.uleb128 0x9
+ 931 00f2 8A000000 		.4byte	0x8a
+ 932 00f6 FF       		.byte	0xff
+ 933 00f7 00       		.byte	0
+ 934 00f8 08       		.uleb128 0x8
+ 935 00f9 5A010000 		.4byte	.LASF15
+ 936 00fd 03       		.byte	0x3
+ 937 00fe A5       		.byte	0xa5
+ 938 00ff 09010000 		.4byte	0x109
+ 939 0103 05       		.uleb128 0x5
+ 940 0104 03       		.byte	0x3
+ 941 0105 00000000 		.4byte	cy_meta_flashprotect
+ 942 0109 07       		.uleb128 0x7
+ 943 010a E8000000 		.4byte	0xe8
+ 944 010e 05       		.uleb128 0x5
+ 945 010f 91000000 		.4byte	0x91
+ 946 0113 1E010000 		.4byte	0x11e
+ 947 0117 09       		.uleb128 0x9
+ 948 0118 8A000000 		.4byte	0x8a
+ 949 011c 0B       		.byte	0xb
+ 950 011d 00       		.byte	0
+ 951 011e 08       		.uleb128 0x8
+ 952 011f 3F000000 		.4byte	.LASF16
+ 953 0123 03       		.byte	0x3
+ 954 0124 D2       		.byte	0xd2
+ 955 0125 2F010000 		.4byte	0x12f
+ 956 0129 05       		.uleb128 0x5
+ 957 012a 03       		.byte	0x3
+ 958 012b 00000000 		.4byte	cy_metadata
+ 959 012f 07       		.uleb128 0x7
+ 960 0130 0E010000 		.4byte	0x10e
+ 961 0134 00       		.byte	0
+ 962              		.section	.debug_abbrev,"",%progbits
+ 963              	.Ldebug_abbrev0:
+ 964 0000 01       		.uleb128 0x1
+ 965 0001 11       		.uleb128 0x11
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 18
+
+
+ 966 0002 01       		.byte	0x1
+ 967 0003 25       		.uleb128 0x25
+ 968 0004 0E       		.uleb128 0xe
+ 969 0005 13       		.uleb128 0x13
+ 970 0006 0B       		.uleb128 0xb
+ 971 0007 03       		.uleb128 0x3
+ 972 0008 0E       		.uleb128 0xe
+ 973 0009 1B       		.uleb128 0x1b
+ 974 000a 0E       		.uleb128 0xe
+ 975 000b 10       		.uleb128 0x10
+ 976 000c 17       		.uleb128 0x17
+ 977 000d 00       		.byte	0
+ 978 000e 00       		.byte	0
+ 979 000f 02       		.uleb128 0x2
+ 980 0010 24       		.uleb128 0x24
+ 981 0011 00       		.byte	0
+ 982 0012 0B       		.uleb128 0xb
+ 983 0013 0B       		.uleb128 0xb
+ 984 0014 3E       		.uleb128 0x3e
+ 985 0015 0B       		.uleb128 0xb
+ 986 0016 03       		.uleb128 0x3
+ 987 0017 0E       		.uleb128 0xe
+ 988 0018 00       		.byte	0
+ 989 0019 00       		.byte	0
+ 990 001a 03       		.uleb128 0x3
+ 991 001b 16       		.uleb128 0x16
+ 992 001c 00       		.byte	0
+ 993 001d 03       		.uleb128 0x3
+ 994 001e 0E       		.uleb128 0xe
+ 995 001f 3A       		.uleb128 0x3a
+ 996 0020 0B       		.uleb128 0xb
+ 997 0021 3B       		.uleb128 0x3b
+ 998 0022 0B       		.uleb128 0xb
+ 999 0023 49       		.uleb128 0x49
+ 1000 0024 13       		.uleb128 0x13
+ 1001 0025 00       		.byte	0
+ 1002 0026 00       		.byte	0
+ 1003 0027 04       		.uleb128 0x4
+ 1004 0028 24       		.uleb128 0x24
+ 1005 0029 00       		.byte	0
+ 1006 002a 0B       		.uleb128 0xb
+ 1007 002b 0B       		.uleb128 0xb
+ 1008 002c 3E       		.uleb128 0x3e
+ 1009 002d 0B       		.uleb128 0xb
+ 1010 002e 03       		.uleb128 0x3
+ 1011 002f 08       		.uleb128 0x8
+ 1012 0030 00       		.byte	0
+ 1013 0031 00       		.byte	0
+ 1014 0032 05       		.uleb128 0x5
+ 1015 0033 01       		.uleb128 0x1
+ 1016 0034 01       		.byte	0x1
+ 1017 0035 49       		.uleb128 0x49
+ 1018 0036 13       		.uleb128 0x13
+ 1019 0037 01       		.uleb128 0x1
+ 1020 0038 13       		.uleb128 0x13
+ 1021 0039 00       		.byte	0
+ 1022 003a 00       		.byte	0
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 19
+
+
+ 1023 003b 06       		.uleb128 0x6
+ 1024 003c 21       		.uleb128 0x21
+ 1025 003d 00       		.byte	0
+ 1026 003e 49       		.uleb128 0x49
+ 1027 003f 13       		.uleb128 0x13
+ 1028 0040 2F       		.uleb128 0x2f
+ 1029 0041 05       		.uleb128 0x5
+ 1030 0042 00       		.byte	0
+ 1031 0043 00       		.byte	0
+ 1032 0044 07       		.uleb128 0x7
+ 1033 0045 26       		.uleb128 0x26
+ 1034 0046 00       		.byte	0
+ 1035 0047 49       		.uleb128 0x49
+ 1036 0048 13       		.uleb128 0x13
+ 1037 0049 00       		.byte	0
+ 1038 004a 00       		.byte	0
+ 1039 004b 08       		.uleb128 0x8
+ 1040 004c 34       		.uleb128 0x34
+ 1041 004d 00       		.byte	0
+ 1042 004e 03       		.uleb128 0x3
+ 1043 004f 0E       		.uleb128 0xe
+ 1044 0050 3A       		.uleb128 0x3a
+ 1045 0051 0B       		.uleb128 0xb
+ 1046 0052 3B       		.uleb128 0x3b
+ 1047 0053 0B       		.uleb128 0xb
+ 1048 0054 49       		.uleb128 0x49
+ 1049 0055 13       		.uleb128 0x13
+ 1050 0056 3F       		.uleb128 0x3f
+ 1051 0057 19       		.uleb128 0x19
+ 1052 0058 02       		.uleb128 0x2
+ 1053 0059 18       		.uleb128 0x18
+ 1054 005a 00       		.byte	0
+ 1055 005b 00       		.byte	0
+ 1056 005c 09       		.uleb128 0x9
+ 1057 005d 21       		.uleb128 0x21
+ 1058 005e 00       		.byte	0
+ 1059 005f 49       		.uleb128 0x49
+ 1060 0060 13       		.uleb128 0x13
+ 1061 0061 2F       		.uleb128 0x2f
+ 1062 0062 0B       		.uleb128 0xb
+ 1063 0063 00       		.byte	0
+ 1064 0064 00       		.byte	0
+ 1065 0065 00       		.byte	0
+ 1066              		.section	.debug_aranges,"",%progbits
+ 1067 0000 14000000 		.4byte	0x14
+ 1068 0004 0200     		.2byte	0x2
+ 1069 0006 00000000 		.4byte	.Ldebug_info0
+ 1070 000a 04       		.byte	0x4
+ 1071 000b 00       		.byte	0
+ 1072 000c 0000     		.2byte	0
+ 1073 000e 0000     		.2byte	0
+ 1074 0010 00000000 		.4byte	0
+ 1075 0014 00000000 		.4byte	0
+ 1076              		.section	.debug_line,"",%progbits
+ 1077              	.Ldebug_line0:
+ 1078 0000 2F010000 		.section	.debug_str,"MS",%progbits,1
+ 1078      02002901 
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 20
+
+
+ 1078      00000201 
+ 1078      FB0E0D00 
+ 1078      01010101 
+ 1079              	.LASF9:
+ 1080 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 1080      6E74385F 
+ 1080      7400
+ 1081              	.LASF19:
+ 1082 000a 443A5C46 		.ascii	"D:\\Files\\Uni\\Embedded_4\\Emb4\\Schak_DisplayTest"
+ 1082      696C6573 
+ 1082      5C556E69 
+ 1082      5C456D62 
+ 1082      65646465 
+ 1083 0038 2E637964 		.ascii	".cydsn\000"
+ 1083      736E00
+ 1084              	.LASF16:
+ 1085 003f 63795F6D 		.ascii	"cy_metadata\000"
+ 1085      65746164 
+ 1085      61746100 
+ 1086              	.LASF1:
+ 1087 004b 756E7369 		.ascii	"unsigned char\000"
+ 1087      676E6564 
+ 1087      20636861 
+ 1087      7200
+ 1088              	.LASF17:
+ 1089 0059 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1089      43313120 
+ 1089      352E342E 
+ 1089      31203230 
+ 1089      31363036 
+ 1090 008c 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1090      20726576 
+ 1090      6973696F 
+ 1090      6E203233 
+ 1090      37373135 
+ 1091 00bf 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1091      66756E63 
+ 1091      74696F6E 
+ 1091      2D736563 
+ 1091      74696F6E 
+ 1092              	.LASF5:
+ 1093 00e7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1093      20756E73 
+ 1093      69676E65 
+ 1093      6420696E 
+ 1093      7400
+ 1094              	.LASF3:
+ 1095 00f9 73686F72 		.ascii	"short unsigned int\000"
+ 1095      7420756E 
+ 1095      7369676E 
+ 1095      65642069 
+ 1095      6E7400
+ 1096              	.LASF13:
+ 1097 010c 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 1097      6574615F 
+ 1097      63757374 
+ 1097      6E766C00 
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 21
+
+
+ 1098              	.LASF12:
+ 1099 011c 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 1099      6574615F 
+ 1099      636F6E66 
+ 1099      69676563 
+ 1099      6300
+ 1100              	.LASF8:
+ 1101 012e 756E7369 		.ascii	"unsigned int\000"
+ 1101      676E6564 
+ 1101      20696E74 
+ 1101      00
+ 1102              	.LASF7:
+ 1103 013b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1103      206C6F6E 
+ 1103      6720756E 
+ 1103      7369676E 
+ 1103      65642069 
+ 1104              	.LASF10:
+ 1105 0152 75696E74 		.ascii	"uint8_t\000"
+ 1105      385F7400 
+ 1106              	.LASF15:
+ 1107 015a 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 1107      6574615F 
+ 1107      666C6173 
+ 1107      6870726F 
+ 1107      74656374 
+ 1108              	.LASF14:
+ 1109 016f 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 1109      6574615F 
+ 1109      776F6E76 
+ 1109      6C00
+ 1110              	.LASF11:
+ 1111 017d 73697A65 		.ascii	"sizetype\000"
+ 1111      74797065 
+ 1111      00
+ 1112              	.LASF6:
+ 1113 0186 6C6F6E67 		.ascii	"long long int\000"
+ 1113      206C6F6E 
+ 1113      6720696E 
+ 1113      7400
+ 1114              	.LASF2:
+ 1115 0194 73686F72 		.ascii	"short int\000"
+ 1115      7420696E 
+ 1115      7400
+ 1116              	.LASF4:
+ 1117 019e 6C6F6E67 		.ascii	"long int\000"
+ 1117      20696E74 
+ 1117      00
+ 1118              	.LASF0:
+ 1119 01a7 7369676E 		.ascii	"signed char\000"
+ 1119      65642063 
+ 1119      68617200 
+ 1120              	.LASF18:
+ 1121 01b3 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 1121      72617465 
+ 1121      645F536F 
+ 1121      75726365 
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cciDUOGo.s 			page 22
+
+
+ 1121      5C50536F 
+ 1122              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

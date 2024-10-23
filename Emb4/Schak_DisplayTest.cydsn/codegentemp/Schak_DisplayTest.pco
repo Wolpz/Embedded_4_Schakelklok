@@ -1,0 +1,42 @@
+# Schak_DisplayTest
+# 2024-10-21 07:56:03Z
+
+# IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 0
+# IO_1@[IOP=(1)][IoId=(1)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 1
+# IO_3@[IOP=(1)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 3
+set_location "\SPI_Module:BSPIM:mosi_pre_reg_split\" 0 3 0 0
+set_location "ClockBlock" clockblockcell -1 -1 0
+set_io "o_DebugLed(0)" iocell 0 0
+set_io "o_DebugLed(1)" iocell 0 1
+set_io "o_DebugLed(2)" iocell 0 2
+set_io "MISO_NC(0)" iocell 1 7
+set_io "Display_DC(0)" iocell 2 1
+set_io "DebugPin(0)" iocell 2 5
+set_io "Display_RST(0)" iocell 2 0
+set_io "Display_CS(0)" iocell 2 2
+set_io "SPI_MOSI(0)" iocell 2 4
+set_io "SPI_SCLK(0)" iocell 2 3
+set_location "\SPI_Module:BSPIM:load_rx_data\" 0 4 0 1
+set_location "Net_85" 0 4 1 0
+set_location "\SPI_Module:BSPIM:tx_status_0\" 0 3 1 2
+set_location "\SPI_Module:BSPIM:tx_status_4\" 0 3 1 3
+set_location "\SPI_Module:BSPIM:rx_status_6\" 0 4 0 0
+set_location "\SPI_Module:BSPIM:BitCounter\" 0 3 7
+set_location "\SPI_Module:BSPIM:mosi_pre_reg_split_1\" 0 3 1 0
+set_location "\SPI_Module:BSPIM:TxStsReg\" 0 2 4
+set_location "\SPI_Module:BSPIM:RxStsReg\" 0 4 4
+set_location "\SPI_Module:BSPIM:sR8:Dp:u0\" 0 3 2
+set_location "\SPI_Module:BSPIM:state_2\" 0 2 0 0
+set_location "\SPI_Module:BSPIM:state_1\" 0 2 1 0
+set_location "\SPI_Module:BSPIM:state_0\" 0 2 0 1
+set_location "Net_81" 0 4 1 1
+set_location "\SPI_Module:BSPIM:mosi_hs_reg\" 0 4 0 2
+set_location "\SPI_Module:BSPIM:mosi_pre_reg\" 0 3 1 1
+set_location "\SPI_Module:BSPIM:load_cond\" 0 2 1 1
+set_location "\SPI_Module:BSPIM:mosi_from_dp_reg\" 0 4 0 3
+set_location "\SPI_Module:BSPIM:ld_ident\" 0 2 0 2
+set_location "\SPI_Module:BSPIM:cnt_enable\" 1 4 0 0
+set_location "Net_13" 1 4 0 1

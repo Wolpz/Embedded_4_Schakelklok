@@ -1,0 +1,29 @@
+--------------- Build Started: 09/19/2024 14:17:35 Project: Schakelklok, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+The code generation step is up to date.
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
+main.c: In function 'ISRH_CheckButtons':
+main.c:23:5: warning: implicit declaration of function 'ISR_1kHz_ClearInterrupt' [-Wimplicit-function-declaration]
+     ISR_1kHz_ClearInterrupt();
+     ^
+main.c: In function 'main':
+main.c:38:28: warning: implicit declaration of function 'checkButtons' [-Wimplicit-function-declaration]
+             buttonStatus = checkButtons(i_Buttons_Read());
+                            ^
+main.c:38:41: warning: implicit declaration of function 'i_Buttons_Read' [-Wimplicit-function-declaration]
+             buttonStatus = checkButtons(i_Buttons_Read());
+                                         ^
+main.c:31:13: warning: variable 'buttonStatus' set but not used [-Wunused-but-set-variable]
+     uint8_t buttonStatus = 0;
+             ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Schakelklok_Buttons.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Schakelklok_Buttons.c -o .\CortexM3\ARM_GCC_541\Debug\Schakelklok_Buttons.o
+Schakelklok_Buttons.c:15:1: warning: multi-line comment [-Wcomment]
+ // Split everything up into funcs that are as simple and short as possible\
+ ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Schakelklok_types.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Schakelklok_types.h -o .\CortexM3\ARM_GCC_541\Debug\Schakelklok_types.o
+arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_541\Debug\Schakelklok.a .\CortexM3\ARM_GCC_541\Debug\i_Button.o .\CortexM3\ARM_GCC_541\Debug\io_RTC.o .\CortexM3\ARM_GCC_541\Debug\o_DebugLed.o .\CortexM3\ARM_GCC_541\Debug\o_Display.o .\CortexM3\ARM_GCC_541\Debug\ISR_1kHz.o .\CortexM3\ARM_GCC_541\Debug\Clock_1.o .\CortexM3\ARM_GCC_541\Debug\CyDmac.o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o .\CortexM3\ARM_GCC_541\Debug\CyLib.o .\CortexM3\ARM_GCC_541\Debug\cyPm.o .\CortexM3\ARM_GCC_541\Debug\CySpc.o .\CortexM3\ARM_GCC_541\Debug\cyutils.o .\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o
+arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_541\Debug\Schakelklok.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\CortexM3\ARM_GCC_541\Debug\Schakelklok.elf .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\Schakelklok_UI.o .\CortexM3\ARM_GCC_541\Debug\Schakelklok_Buttons.o .\CortexM3\ARM_GCC_541\Debug\Schakelklok_types.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\Schakelklok.a "D:\Applications\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/Schakelklok.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
+.\CortexM3\ARM_GCC_541\Debug\Schakelklok_types.o: file not recognized: File format not recognized
+collect2.exe: error: ld returned 1 exit status
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Build Failed: 09/19/2024 14:17:37 ---------------

@@ -1,0 +1,60 @@
+--------------- Rebuild Started: 09/12/2024 16:05:39 Project: Schakelklok, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+Deleting file ".\Schakelklok.rpt"
+cydsfit.exe -.appdatapath "C:\Users\laure\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\Schakelklok.cyprj -d CY8C5888LTI-LP097 -s D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+ADD: sdb.M0025: error: No input on Instance "io_RTC", terminal "y_2".
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_13)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_4.20)
+ADD: sdb.M0050: error: Terminal "y_2" requires connection when it is visible.
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_13)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_4.20)
+ADD: sdb.M0025: error: No input on Instance "o_Display", terminal "y_0".
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_6)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_5.4)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_6)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_5.4)
+ADD: sdb.M0025: error: No input on Instance "o_Display", terminal "y_1".
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_22)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_5.12)
+ADD: sdb.M0050: error: Terminal "y_1" requires connection when it is visible.
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_22)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_5.12)
+ADD: sdb.M0025: error: No input on Instance "o_Display", terminal "y_2".
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_23)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_5.20)
+ADD: sdb.M0050: error: Terminal "y_2" requires connection when it is visible.
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_23)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_5.20)
+ADD: sdb.M0025: error: No input on Instance "io_RTC", terminal "y_3".
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_14)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_4.28)
+ADD: sdb.M0050: error: Terminal "y_3" requires connection when it is visible.
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_14)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_4.28)
+ADD: sdb.M0025: error: No input on Instance "o_Display", terminal "y_4".
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_25)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_5.36)
+ADD: sdb.M0050: error: Terminal "y_4" requires connection when it is visible.
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_25)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_5.36)
+ADD: sdb.M0025: error: No input on Instance "o_Display", terminal "y_3".
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_24)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_5.28)
+ADD: sdb.M0050: error: Terminal "y_3" requires connection when it is visible.
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_24)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_5.28)
+ADD: sdb.M0025: error: No input on Instance "io_RTC", terminal "y_0".
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_5)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_4.4)
+ADD: sdb.M0050: error: Terminal "y_0" requires connection when it is visible.
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_5)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_4.4)
+ADD: sdb.M0025: error: No input on Instance "io_RTC", terminal "y_1".
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_12)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_4.12)
+ADD: sdb.M0050: error: Terminal "y_1" requires connection when it is visible.
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Signal: Net_12)
+ * D:\Files\Uni\Embedded_4\Emb4\Schakelklok.cydsn\TopDesign\TopDesign.cysch (Shape_4.12)
+Error: fit.M0050: The fitter aborted due to errors, please address all errors and rebuild. (App=cydsfit)
+--------------- Rebuild Failed: 09/12/2024 16:05:42 ---------------

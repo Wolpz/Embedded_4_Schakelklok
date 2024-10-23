@@ -1,0 +1,983 @@
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"Schakelklok_Buttons.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.checkButtons,"ax",%progbits
+  20              		.align	2
+  21              		.global	checkButtons
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	checkButtons, %function
+  25              	checkButtons:
+  26              	.LFB63:
+  27              		.file 1 "Schakelklok_Buttons.c"
+   1:Schakelklok_Buttons.c **** /* ========================================
+   2:Schakelklok_Buttons.c ****  *
+   3:Schakelklok_Buttons.c ****  * Copyright YOUR COMPANY, THE YEAR
+   4:Schakelklok_Buttons.c ****  * All Rights Reserved
+   5:Schakelklok_Buttons.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:Schakelklok_Buttons.c ****  *
+   7:Schakelklok_Buttons.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:Schakelklok_Buttons.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:Schakelklok_Buttons.c ****  *
+  10:Schakelklok_Buttons.c ****  * ========================================
+  11:Schakelklok_Buttons.c **** */
+  12:Schakelklok_Buttons.c **** #include "Schakelklok_Buttons.h"
+  13:Schakelklok_Buttons.c **** 
+  14:Schakelklok_Buttons.c **** // K I S S
+  15:Schakelklok_Buttons.c **** // Split everything up into funcs that are as simple and short as possible\
+  16:Schakelklok_Buttons.c **** 
+  17:Schakelklok_Buttons.c **** // TODO how to add buttons to kept array of buttons to check?
+  18:Schakelklok_Buttons.c **** 
+  19:Schakelklok_Buttons.c **** void checkButtons(BUTTON_T* button_ptr, FLAG_T* flag, int flag_offset){
+  28              		.loc 1 19 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  34 0000 7047     		bx	lr
+  35              		.cfi_endproc
+  36              	.LFE63:
+  37              		.size	checkButtons, .-checkButtons
+  38 0002 00BF     		.section	.text.button_debounce,"ax",%progbits
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 2
+
+
+  39              		.align	2
+  40              		.global	button_debounce
+  41              		.thumb
+  42              		.thumb_func
+  43              		.type	button_debounce, %function
+  44              	button_debounce:
+  45              	.LFB64:
+  20:Schakelklok_Buttons.c ****     // TODO
+  21:Schakelklok_Buttons.c ****     //debounce all buttons (using array??)
+  22:Schakelklok_Buttons.c ****     //check if return val for any button is diff from old value, set button flag using offset
+  23:Schakelklok_Buttons.c ****     
+  24:Schakelklok_Buttons.c **** }
+  25:Schakelklok_Buttons.c **** 
+  26:Schakelklok_Buttons.c **** BUTTONSTATUS_T button_debounce(int buttonRead_i, BUTTON_T* button_ptr){
+  46              		.loc 1 26 0
+  47              		.cfi_startproc
+  48              		@ args = 0, pretend = 0, frame = 0
+  49              		@ frame_needed = 0, uses_anonymous_args = 0
+  50              		@ link register save eliminated.
+  51              	.LVL1:
+  27:Schakelklok_Buttons.c ****     BUTTONSTATUS_T  btnStatus = OFF;
+  28:Schakelklok_Buttons.c ****     
+  29:Schakelklok_Buttons.c ****     if(buttonRead_i == 1){
+  52              		.loc 1 29 0
+  53 0000 0128     		cmp	r0, #1
+  54 0002 0BD1     		bne	.L3
+  30:Schakelklok_Buttons.c ****         if(button_ptr->counter > BUTTON_LONGPRESS_MS){
+  55              		.loc 1 30 0
+  56 0004 4B88     		ldrh	r3, [r1, #2]
+  57 0006 B3F57A7F 		cmp	r3, #1000
+  58 000a 0AD8     		bhi	.L6
+  31:Schakelklok_Buttons.c ****             button_ptr->counter = button_ptr->counter;
+  32:Schakelklok_Buttons.c ****             btnStatus = LONGPRESS;
+  33:Schakelklok_Buttons.c ****         }
+  34:Schakelklok_Buttons.c ****         else{
+  35:Schakelklok_Buttons.c ****             if(button_ptr->counter > BUTTON_PRESS_MS){
+  59              		.loc 1 35 0
+  60 000c 642B     		cmp	r3, #100
+  61 000e 01D8     		bhi	.L7
+  27:Schakelklok_Buttons.c ****     
+  62              		.loc 1 27 0
+  63 0010 0020     		movs	r0, #0
+  64              	.LVL2:
+  65 0012 00E0     		b	.L5
+  66              	.LVL3:
+  67              	.L7:
+  36:Schakelklok_Buttons.c ****                 btnStatus = PRESS;
+  68              		.loc 1 36 0
+  69 0014 0120     		movs	r0, #1
+  70              	.LVL4:
+  71              	.L5:
+  37:Schakelklok_Buttons.c ****             }
+  38:Schakelklok_Buttons.c ****             button_ptr->counter++;
+  72              		.loc 1 38 0
+  73 0016 0133     		adds	r3, r3, #1
+  74 0018 4B80     		strh	r3, [r1, #2]	@ movhi
+  75 001a 7047     		bx	lr
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 3
+
+
+  76              	.LVL5:
+  77              	.L3:
+  39:Schakelklok_Buttons.c ****         }
+  40:Schakelklok_Buttons.c ****     }
+  41:Schakelklok_Buttons.c ****     else{
+  42:Schakelklok_Buttons.c ****         button_ptr->counter = 0;
+  78              		.loc 1 42 0
+  79 001c 0020     		movs	r0, #0
+  80              	.LVL6:
+  81 001e 4880     		strh	r0, [r1, #2]	@ movhi
+  82 0020 7047     		bx	lr
+  83              	.LVL7:
+  84              	.L6:
+  32:Schakelklok_Buttons.c ****         }
+  85              		.loc 1 32 0
+  86 0022 0220     		movs	r0, #2
+  87              	.LVL8:
+  43:Schakelklok_Buttons.c ****         btnStatus = OFF;
+  44:Schakelklok_Buttons.c ****     }
+  45:Schakelklok_Buttons.c ****     return btnStatus;
+  46:Schakelklok_Buttons.c **** }
+  88              		.loc 1 46 0
+  89 0024 7047     		bx	lr
+  90              		.cfi_endproc
+  91              	.LFE64:
+  92              		.size	button_debounce, .-button_debounce
+  93 0026 00BF     		.text
+  94              	.Letext0:
+  95              		.file 2 "d:\\applications\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-
+  96              		.file 3 "d:\\applications\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-
+  97              		.file 4 "Schakelklok_types.h"
+  98              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+  99              		.section	.debug_info,"",%progbits
+ 100              	.Ldebug_info0:
+ 101 0000 00020000 		.4byte	0x200
+ 102 0004 0400     		.2byte	0x4
+ 103 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 104 000a 04       		.byte	0x4
+ 105 000b 01       		.uleb128 0x1
+ 106 000c 84000000 		.4byte	.LASF34
+ 107 0010 0C       		.byte	0xc
+ 108 0011 37000000 		.4byte	.LASF35
+ 109 0015 6E010000 		.4byte	.LASF36
+ 110 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 111 001d 00000000 		.4byte	0
+ 112 0021 00000000 		.4byte	.Ldebug_line0
+ 113 0025 02       		.uleb128 0x2
+ 114 0026 01       		.byte	0x1
+ 115 0027 06       		.byte	0x6
+ 116 0028 2C020000 		.4byte	.LASF0
+ 117 002c 03       		.uleb128 0x3
+ 118 002d 07000000 		.4byte	.LASF3
+ 119 0031 02       		.byte	0x2
+ 120 0032 1D       		.byte	0x1d
+ 121 0033 37000000 		.4byte	0x37
+ 122 0037 02       		.uleb128 0x2
+ 123 0038 01       		.byte	0x1
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 4
+
+
+ 124 0039 08       		.byte	0x8
+ 125 003a 76000000 		.4byte	.LASF1
+ 126 003e 02       		.uleb128 0x2
+ 127 003f 02       		.byte	0x2
+ 128 0040 05       		.byte	0x5
+ 129 0041 04020000 		.4byte	.LASF2
+ 130 0045 03       		.uleb128 0x3
+ 131 0046 5C010000 		.4byte	.LASF4
+ 132 004a 02       		.byte	0x2
+ 133 004b 2B       		.byte	0x2b
+ 134 004c 50000000 		.4byte	0x50
+ 135 0050 02       		.uleb128 0x2
+ 136 0051 02       		.byte	0x2
+ 137 0052 07       		.byte	0x7
+ 138 0053 31010000 		.4byte	.LASF5
+ 139 0057 03       		.uleb128 0x3
+ 140 0058 28000000 		.4byte	.LASF6
+ 141 005c 02       		.byte	0x2
+ 142 005d 3F       		.byte	0x3f
+ 143 005e 62000000 		.4byte	0x62
+ 144 0062 02       		.uleb128 0x2
+ 145 0063 04       		.byte	0x4
+ 146 0064 05       		.byte	0x5
+ 147 0065 17020000 		.4byte	.LASF7
+ 148 0069 02       		.uleb128 0x2
+ 149 006a 04       		.byte	0x4
+ 150 006b 07       		.byte	0x7
+ 151 006c 1F010000 		.4byte	.LASF8
+ 152 0070 02       		.uleb128 0x2
+ 153 0071 08       		.byte	0x8
+ 154 0072 05       		.byte	0x5
+ 155 0073 F1010000 		.4byte	.LASF9
+ 156 0077 02       		.uleb128 0x2
+ 157 0078 08       		.byte	0x8
+ 158 0079 07       		.byte	0x7
+ 159 007a C1010000 		.4byte	.LASF10
+ 160 007e 04       		.uleb128 0x4
+ 161 007f 04       		.byte	0x4
+ 162 0080 05       		.byte	0x5
+ 163 0081 696E7400 		.ascii	"int\000"
+ 164 0085 02       		.uleb128 0x2
+ 165 0086 04       		.byte	0x4
+ 166 0087 07       		.byte	0x7
+ 167 0088 AC010000 		.4byte	.LASF11
+ 168 008c 03       		.uleb128 0x3
+ 169 008d D8010000 		.4byte	.LASF12
+ 170 0091 03       		.byte	0x3
+ 171 0092 18       		.byte	0x18
+ 172 0093 2C000000 		.4byte	0x2c
+ 173 0097 03       		.uleb128 0x3
+ 174 0098 0E020000 		.4byte	.LASF13
+ 175 009c 03       		.byte	0x3
+ 176 009d 24       		.byte	0x24
+ 177 009e 45000000 		.4byte	0x45
+ 178 00a2 03       		.uleb128 0x3
+ 179 00a3 E0010000 		.4byte	.LASF14
+ 180 00a7 03       		.byte	0x3
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 5
+
+
+ 181 00a8 2C       		.byte	0x2c
+ 182 00a9 57000000 		.4byte	0x57
+ 183 00ad 02       		.uleb128 0x2
+ 184 00ae 04       		.byte	0x4
+ 185 00af 04       		.byte	0x4
+ 186 00b0 68000000 		.4byte	.LASF15
+ 187 00b4 02       		.uleb128 0x2
+ 188 00b5 08       		.byte	0x8
+ 189 00b6 04       		.byte	0x4
+ 190 00b7 67010000 		.4byte	.LASF16
+ 191 00bb 02       		.uleb128 0x2
+ 192 00bc 01       		.byte	0x1
+ 193 00bd 08       		.byte	0x8
+ 194 00be FF010000 		.4byte	.LASF17
+ 195 00c2 02       		.uleb128 0x2
+ 196 00c3 04       		.byte	0x4
+ 197 00c4 07       		.byte	0x7
+ 198 00c5 E8010000 		.4byte	.LASF18
+ 199 00c9 02       		.uleb128 0x2
+ 200 00ca 08       		.byte	0x8
+ 201 00cb 04       		.byte	0x4
+ 202 00cc 20020000 		.4byte	.LASF19
+ 203 00d0 05       		.uleb128 0x5
+ 204 00d1 01       		.byte	0x1
+ 205 00d2 37000000 		.4byte	0x37
+ 206 00d6 04       		.byte	0x4
+ 207 00d7 0E       		.byte	0xe
+ 208 00d8 EF000000 		.4byte	0xef
+ 209 00dc 06       		.uleb128 0x6
+ 210 00dd 4F464600 		.ascii	"OFF\000"
+ 211 00e1 00       		.byte	0
+ 212 00e2 07       		.uleb128 0x7
+ 213 00e3 59000000 		.4byte	.LASF20
+ 214 00e7 01       		.byte	0x1
+ 215 00e8 07       		.uleb128 0x7
+ 216 00e9 60020000 		.4byte	.LASF21
+ 217 00ed 02       		.byte	0x2
+ 218 00ee 00       		.byte	0
+ 219 00ef 03       		.uleb128 0x3
+ 220 00f0 51020000 		.4byte	.LASF22
+ 221 00f4 04       		.byte	0x4
+ 222 00f5 10       		.byte	0x10
+ 223 00f6 D0000000 		.4byte	0xd0
+ 224 00fa 08       		.uleb128 0x8
+ 225 00fb 06       		.byte	0x6
+ 226 00fc 04       		.byte	0x4
+ 227 00fd 12       		.byte	0x12
+ 228 00fe 27010000 		.4byte	0x127
+ 229 0102 09       		.uleb128 0x9
+ 230 0103 32000000 		.4byte	.LASF23
+ 231 0107 04       		.byte	0x4
+ 232 0108 13       		.byte	0x13
+ 233 0109 8C000000 		.4byte	0x8c
+ 234 010d 00       		.byte	0
+ 235 010e 09       		.uleb128 0x9
+ 236 010f 6E000000 		.4byte	.LASF24
+ 237 0113 04       		.byte	0x4
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 6
+
+
+ 238 0114 14       		.byte	0x14
+ 239 0115 97000000 		.4byte	0x97
+ 240 0119 02       		.byte	0x2
+ 241 011a 09       		.uleb128 0x9
+ 242 011b 11000000 		.4byte	.LASF25
+ 243 011f 04       		.byte	0x4
+ 244 0120 15       		.byte	0x15
+ 245 0121 EF000000 		.4byte	0xef
+ 246 0125 04       		.byte	0x4
+ 247 0126 00       		.byte	0
+ 248 0127 03       		.uleb128 0x3
+ 249 0128 5F000000 		.4byte	.LASF26
+ 250 012c 04       		.byte	0x4
+ 251 012d 16       		.byte	0x16
+ 252 012e FA000000 		.4byte	0xfa
+ 253 0132 08       		.uleb128 0x8
+ 254 0133 08       		.byte	0x8
+ 255 0134 04       		.byte	0x4
+ 256 0135 18       		.byte	0x18
+ 257 0136 53010000 		.4byte	0x153
+ 258 013a 09       		.uleb128 0x9
+ 259 013b B9010000 		.4byte	.LASF27
+ 260 013f 04       		.byte	0x4
+ 261 0140 19       		.byte	0x19
+ 262 0141 53010000 		.4byte	0x153
+ 263 0145 00       		.byte	0
+ 264 0146 09       		.uleb128 0x9
+ 265 0147 4D000000 		.4byte	.LASF28
+ 266 014b 04       		.byte	0x4
+ 267 014c 1A       		.byte	0x1a
+ 268 014d 8C000000 		.4byte	0x8c
+ 269 0151 04       		.byte	0x4
+ 270 0152 00       		.byte	0
+ 271 0153 0A       		.uleb128 0xa
+ 272 0154 04       		.byte	0x4
+ 273 0155 8C000000 		.4byte	0x8c
+ 274 0159 03       		.uleb128 0x3
+ 275 015a 00000000 		.4byte	.LASF29
+ 276 015e 04       		.byte	0x4
+ 277 015f 1B       		.byte	0x1b
+ 278 0160 32010000 		.4byte	0x132
+ 279 0164 0B       		.uleb128 0xb
+ 280 0165 12010000 		.4byte	.LASF37
+ 281 0169 01       		.byte	0x1
+ 282 016a 13       		.byte	0x13
+ 283 016b 00000000 		.4byte	.LFB63
+ 284 016f 02000000 		.4byte	.LFE63-.LFB63
+ 285 0173 01       		.uleb128 0x1
+ 286 0174 9C       		.byte	0x9c
+ 287 0175 A1010000 		.4byte	0x1a1
+ 288 0179 0C       		.uleb128 0xc
+ 289 017a 44010000 		.4byte	.LASF30
+ 290 017e 01       		.byte	0x1
+ 291 017f 13       		.byte	0x13
+ 292 0180 A1010000 		.4byte	0x1a1
+ 293 0184 01       		.uleb128 0x1
+ 294 0185 50       		.byte	0x50
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 7
+
+
+ 295 0186 0C       		.uleb128 0xc
+ 296 0187 A7010000 		.4byte	.LASF31
+ 297 018b 01       		.byte	0x1
+ 298 018c 13       		.byte	0x13
+ 299 018d A7010000 		.4byte	0x1a7
+ 300 0191 01       		.uleb128 0x1
+ 301 0192 51       		.byte	0x51
+ 302 0193 0C       		.uleb128 0xc
+ 303 0194 45020000 		.4byte	.LASF32
+ 304 0198 01       		.byte	0x1
+ 305 0199 13       		.byte	0x13
+ 306 019a 7E000000 		.4byte	0x7e
+ 307 019e 01       		.uleb128 0x1
+ 308 019f 52       		.byte	0x52
+ 309 01a0 00       		.byte	0
+ 310 01a1 0A       		.uleb128 0xa
+ 311 01a2 04       		.byte	0x4
+ 312 01a3 27010000 		.4byte	0x127
+ 313 01a7 0A       		.uleb128 0xa
+ 314 01a8 04       		.byte	0x4
+ 315 01a9 59010000 		.4byte	0x159
+ 316 01ad 0D       		.uleb128 0xd
+ 317 01ae 18000000 		.4byte	.LASF38
+ 318 01b2 01       		.byte	0x1
+ 319 01b3 1A       		.byte	0x1a
+ 320 01b4 EF000000 		.4byte	0xef
+ 321 01b8 00000000 		.4byte	.LFB64
+ 322 01bc 26000000 		.4byte	.LFE64-.LFB64
+ 323 01c0 01       		.uleb128 0x1
+ 324 01c1 9C       		.byte	0x9c
+ 325 01c2 F2010000 		.4byte	0x1f2
+ 326 01c6 0E       		.uleb128 0xe
+ 327 01c7 38020000 		.4byte	.LASF33
+ 328 01cb 01       		.byte	0x1
+ 329 01cc 1A       		.byte	0x1a
+ 330 01cd 7E000000 		.4byte	0x7e
+ 331 01d1 00000000 		.4byte	.LLST0
+ 332 01d5 0C       		.uleb128 0xc
+ 333 01d6 44010000 		.4byte	.LASF30
+ 334 01da 01       		.byte	0x1
+ 335 01db 1A       		.byte	0x1a
+ 336 01dc A1010000 		.4byte	0x1a1
+ 337 01e0 01       		.uleb128 0x1
+ 338 01e1 51       		.byte	0x51
+ 339 01e2 0F       		.uleb128 0xf
+ 340 01e3 9D010000 		.4byte	.LASF39
+ 341 01e7 01       		.byte	0x1
+ 342 01e8 1B       		.byte	0x1b
+ 343 01e9 EF000000 		.4byte	0xef
+ 344 01ed 6C000000 		.4byte	.LLST1
+ 345 01f1 00       		.byte	0
+ 346 01f2 10       		.uleb128 0x10
+ 347 01f3 4F010000 		.4byte	.LASF40
+ 348 01f7 05       		.byte	0x5
+ 349 01f8 1207     		.2byte	0x712
+ 350 01fa FE010000 		.4byte	0x1fe
+ 351 01fe 11       		.uleb128 0x11
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 8
+
+
+ 352 01ff A2000000 		.4byte	0xa2
+ 353 0203 00       		.byte	0
+ 354              		.section	.debug_abbrev,"",%progbits
+ 355              	.Ldebug_abbrev0:
+ 356 0000 01       		.uleb128 0x1
+ 357 0001 11       		.uleb128 0x11
+ 358 0002 01       		.byte	0x1
+ 359 0003 25       		.uleb128 0x25
+ 360 0004 0E       		.uleb128 0xe
+ 361 0005 13       		.uleb128 0x13
+ 362 0006 0B       		.uleb128 0xb
+ 363 0007 03       		.uleb128 0x3
+ 364 0008 0E       		.uleb128 0xe
+ 365 0009 1B       		.uleb128 0x1b
+ 366 000a 0E       		.uleb128 0xe
+ 367 000b 55       		.uleb128 0x55
+ 368 000c 17       		.uleb128 0x17
+ 369 000d 11       		.uleb128 0x11
+ 370 000e 01       		.uleb128 0x1
+ 371 000f 10       		.uleb128 0x10
+ 372 0010 17       		.uleb128 0x17
+ 373 0011 00       		.byte	0
+ 374 0012 00       		.byte	0
+ 375 0013 02       		.uleb128 0x2
+ 376 0014 24       		.uleb128 0x24
+ 377 0015 00       		.byte	0
+ 378 0016 0B       		.uleb128 0xb
+ 379 0017 0B       		.uleb128 0xb
+ 380 0018 3E       		.uleb128 0x3e
+ 381 0019 0B       		.uleb128 0xb
+ 382 001a 03       		.uleb128 0x3
+ 383 001b 0E       		.uleb128 0xe
+ 384 001c 00       		.byte	0
+ 385 001d 00       		.byte	0
+ 386 001e 03       		.uleb128 0x3
+ 387 001f 16       		.uleb128 0x16
+ 388 0020 00       		.byte	0
+ 389 0021 03       		.uleb128 0x3
+ 390 0022 0E       		.uleb128 0xe
+ 391 0023 3A       		.uleb128 0x3a
+ 392 0024 0B       		.uleb128 0xb
+ 393 0025 3B       		.uleb128 0x3b
+ 394 0026 0B       		.uleb128 0xb
+ 395 0027 49       		.uleb128 0x49
+ 396 0028 13       		.uleb128 0x13
+ 397 0029 00       		.byte	0
+ 398 002a 00       		.byte	0
+ 399 002b 04       		.uleb128 0x4
+ 400 002c 24       		.uleb128 0x24
+ 401 002d 00       		.byte	0
+ 402 002e 0B       		.uleb128 0xb
+ 403 002f 0B       		.uleb128 0xb
+ 404 0030 3E       		.uleb128 0x3e
+ 405 0031 0B       		.uleb128 0xb
+ 406 0032 03       		.uleb128 0x3
+ 407 0033 08       		.uleb128 0x8
+ 408 0034 00       		.byte	0
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 9
+
+
+ 409 0035 00       		.byte	0
+ 410 0036 05       		.uleb128 0x5
+ 411 0037 04       		.uleb128 0x4
+ 412 0038 01       		.byte	0x1
+ 413 0039 0B       		.uleb128 0xb
+ 414 003a 0B       		.uleb128 0xb
+ 415 003b 49       		.uleb128 0x49
+ 416 003c 13       		.uleb128 0x13
+ 417 003d 3A       		.uleb128 0x3a
+ 418 003e 0B       		.uleb128 0xb
+ 419 003f 3B       		.uleb128 0x3b
+ 420 0040 0B       		.uleb128 0xb
+ 421 0041 01       		.uleb128 0x1
+ 422 0042 13       		.uleb128 0x13
+ 423 0043 00       		.byte	0
+ 424 0044 00       		.byte	0
+ 425 0045 06       		.uleb128 0x6
+ 426 0046 28       		.uleb128 0x28
+ 427 0047 00       		.byte	0
+ 428 0048 03       		.uleb128 0x3
+ 429 0049 08       		.uleb128 0x8
+ 430 004a 1C       		.uleb128 0x1c
+ 431 004b 0B       		.uleb128 0xb
+ 432 004c 00       		.byte	0
+ 433 004d 00       		.byte	0
+ 434 004e 07       		.uleb128 0x7
+ 435 004f 28       		.uleb128 0x28
+ 436 0050 00       		.byte	0
+ 437 0051 03       		.uleb128 0x3
+ 438 0052 0E       		.uleb128 0xe
+ 439 0053 1C       		.uleb128 0x1c
+ 440 0054 0B       		.uleb128 0xb
+ 441 0055 00       		.byte	0
+ 442 0056 00       		.byte	0
+ 443 0057 08       		.uleb128 0x8
+ 444 0058 13       		.uleb128 0x13
+ 445 0059 01       		.byte	0x1
+ 446 005a 0B       		.uleb128 0xb
+ 447 005b 0B       		.uleb128 0xb
+ 448 005c 3A       		.uleb128 0x3a
+ 449 005d 0B       		.uleb128 0xb
+ 450 005e 3B       		.uleb128 0x3b
+ 451 005f 0B       		.uleb128 0xb
+ 452 0060 01       		.uleb128 0x1
+ 453 0061 13       		.uleb128 0x13
+ 454 0062 00       		.byte	0
+ 455 0063 00       		.byte	0
+ 456 0064 09       		.uleb128 0x9
+ 457 0065 0D       		.uleb128 0xd
+ 458 0066 00       		.byte	0
+ 459 0067 03       		.uleb128 0x3
+ 460 0068 0E       		.uleb128 0xe
+ 461 0069 3A       		.uleb128 0x3a
+ 462 006a 0B       		.uleb128 0xb
+ 463 006b 3B       		.uleb128 0x3b
+ 464 006c 0B       		.uleb128 0xb
+ 465 006d 49       		.uleb128 0x49
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 10
+
+
+ 466 006e 13       		.uleb128 0x13
+ 467 006f 38       		.uleb128 0x38
+ 468 0070 0B       		.uleb128 0xb
+ 469 0071 00       		.byte	0
+ 470 0072 00       		.byte	0
+ 471 0073 0A       		.uleb128 0xa
+ 472 0074 0F       		.uleb128 0xf
+ 473 0075 00       		.byte	0
+ 474 0076 0B       		.uleb128 0xb
+ 475 0077 0B       		.uleb128 0xb
+ 476 0078 49       		.uleb128 0x49
+ 477 0079 13       		.uleb128 0x13
+ 478 007a 00       		.byte	0
+ 479 007b 00       		.byte	0
+ 480 007c 0B       		.uleb128 0xb
+ 481 007d 2E       		.uleb128 0x2e
+ 482 007e 01       		.byte	0x1
+ 483 007f 3F       		.uleb128 0x3f
+ 484 0080 19       		.uleb128 0x19
+ 485 0081 03       		.uleb128 0x3
+ 486 0082 0E       		.uleb128 0xe
+ 487 0083 3A       		.uleb128 0x3a
+ 488 0084 0B       		.uleb128 0xb
+ 489 0085 3B       		.uleb128 0x3b
+ 490 0086 0B       		.uleb128 0xb
+ 491 0087 27       		.uleb128 0x27
+ 492 0088 19       		.uleb128 0x19
+ 493 0089 11       		.uleb128 0x11
+ 494 008a 01       		.uleb128 0x1
+ 495 008b 12       		.uleb128 0x12
+ 496 008c 06       		.uleb128 0x6
+ 497 008d 40       		.uleb128 0x40
+ 498 008e 18       		.uleb128 0x18
+ 499 008f 9742     		.uleb128 0x2117
+ 500 0091 19       		.uleb128 0x19
+ 501 0092 01       		.uleb128 0x1
+ 502 0093 13       		.uleb128 0x13
+ 503 0094 00       		.byte	0
+ 504 0095 00       		.byte	0
+ 505 0096 0C       		.uleb128 0xc
+ 506 0097 05       		.uleb128 0x5
+ 507 0098 00       		.byte	0
+ 508 0099 03       		.uleb128 0x3
+ 509 009a 0E       		.uleb128 0xe
+ 510 009b 3A       		.uleb128 0x3a
+ 511 009c 0B       		.uleb128 0xb
+ 512 009d 3B       		.uleb128 0x3b
+ 513 009e 0B       		.uleb128 0xb
+ 514 009f 49       		.uleb128 0x49
+ 515 00a0 13       		.uleb128 0x13
+ 516 00a1 02       		.uleb128 0x2
+ 517 00a2 18       		.uleb128 0x18
+ 518 00a3 00       		.byte	0
+ 519 00a4 00       		.byte	0
+ 520 00a5 0D       		.uleb128 0xd
+ 521 00a6 2E       		.uleb128 0x2e
+ 522 00a7 01       		.byte	0x1
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 11
+
+
+ 523 00a8 3F       		.uleb128 0x3f
+ 524 00a9 19       		.uleb128 0x19
+ 525 00aa 03       		.uleb128 0x3
+ 526 00ab 0E       		.uleb128 0xe
+ 527 00ac 3A       		.uleb128 0x3a
+ 528 00ad 0B       		.uleb128 0xb
+ 529 00ae 3B       		.uleb128 0x3b
+ 530 00af 0B       		.uleb128 0xb
+ 531 00b0 27       		.uleb128 0x27
+ 532 00b1 19       		.uleb128 0x19
+ 533 00b2 49       		.uleb128 0x49
+ 534 00b3 13       		.uleb128 0x13
+ 535 00b4 11       		.uleb128 0x11
+ 536 00b5 01       		.uleb128 0x1
+ 537 00b6 12       		.uleb128 0x12
+ 538 00b7 06       		.uleb128 0x6
+ 539 00b8 40       		.uleb128 0x40
+ 540 00b9 18       		.uleb128 0x18
+ 541 00ba 9742     		.uleb128 0x2117
+ 542 00bc 19       		.uleb128 0x19
+ 543 00bd 01       		.uleb128 0x1
+ 544 00be 13       		.uleb128 0x13
+ 545 00bf 00       		.byte	0
+ 546 00c0 00       		.byte	0
+ 547 00c1 0E       		.uleb128 0xe
+ 548 00c2 05       		.uleb128 0x5
+ 549 00c3 00       		.byte	0
+ 550 00c4 03       		.uleb128 0x3
+ 551 00c5 0E       		.uleb128 0xe
+ 552 00c6 3A       		.uleb128 0x3a
+ 553 00c7 0B       		.uleb128 0xb
+ 554 00c8 3B       		.uleb128 0x3b
+ 555 00c9 0B       		.uleb128 0xb
+ 556 00ca 49       		.uleb128 0x49
+ 557 00cb 13       		.uleb128 0x13
+ 558 00cc 02       		.uleb128 0x2
+ 559 00cd 17       		.uleb128 0x17
+ 560 00ce 00       		.byte	0
+ 561 00cf 00       		.byte	0
+ 562 00d0 0F       		.uleb128 0xf
+ 563 00d1 34       		.uleb128 0x34
+ 564 00d2 00       		.byte	0
+ 565 00d3 03       		.uleb128 0x3
+ 566 00d4 0E       		.uleb128 0xe
+ 567 00d5 3A       		.uleb128 0x3a
+ 568 00d6 0B       		.uleb128 0xb
+ 569 00d7 3B       		.uleb128 0x3b
+ 570 00d8 0B       		.uleb128 0xb
+ 571 00d9 49       		.uleb128 0x49
+ 572 00da 13       		.uleb128 0x13
+ 573 00db 02       		.uleb128 0x2
+ 574 00dc 17       		.uleb128 0x17
+ 575 00dd 00       		.byte	0
+ 576 00de 00       		.byte	0
+ 577 00df 10       		.uleb128 0x10
+ 578 00e0 34       		.uleb128 0x34
+ 579 00e1 00       		.byte	0
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 12
+
+
+ 580 00e2 03       		.uleb128 0x3
+ 581 00e3 0E       		.uleb128 0xe
+ 582 00e4 3A       		.uleb128 0x3a
+ 583 00e5 0B       		.uleb128 0xb
+ 584 00e6 3B       		.uleb128 0x3b
+ 585 00e7 05       		.uleb128 0x5
+ 586 00e8 49       		.uleb128 0x49
+ 587 00e9 13       		.uleb128 0x13
+ 588 00ea 3F       		.uleb128 0x3f
+ 589 00eb 19       		.uleb128 0x19
+ 590 00ec 3C       		.uleb128 0x3c
+ 591 00ed 19       		.uleb128 0x19
+ 592 00ee 00       		.byte	0
+ 593 00ef 00       		.byte	0
+ 594 00f0 11       		.uleb128 0x11
+ 595 00f1 35       		.uleb128 0x35
+ 596 00f2 00       		.byte	0
+ 597 00f3 49       		.uleb128 0x49
+ 598 00f4 13       		.uleb128 0x13
+ 599 00f5 00       		.byte	0
+ 600 00f6 00       		.byte	0
+ 601 00f7 00       		.byte	0
+ 602              		.section	.debug_loc,"",%progbits
+ 603              	.Ldebug_loc0:
+ 604              	.LLST0:
+ 605 0000 00000000 		.4byte	.LVL1
+ 606 0004 12000000 		.4byte	.LVL2
+ 607 0008 0100     		.2byte	0x1
+ 608 000a 50       		.byte	0x50
+ 609 000b 12000000 		.4byte	.LVL2
+ 610 000f 14000000 		.4byte	.LVL3
+ 611 0013 0400     		.2byte	0x4
+ 612 0015 F3       		.byte	0xf3
+ 613 0016 01       		.uleb128 0x1
+ 614 0017 50       		.byte	0x50
+ 615 0018 9F       		.byte	0x9f
+ 616 0019 14000000 		.4byte	.LVL3
+ 617 001d 16000000 		.4byte	.LVL4
+ 618 0021 0100     		.2byte	0x1
+ 619 0023 50       		.byte	0x50
+ 620 0024 16000000 		.4byte	.LVL4
+ 621 0028 1C000000 		.4byte	.LVL5
+ 622 002c 0400     		.2byte	0x4
+ 623 002e F3       		.byte	0xf3
+ 624 002f 01       		.uleb128 0x1
+ 625 0030 50       		.byte	0x50
+ 626 0031 9F       		.byte	0x9f
+ 627 0032 1C000000 		.4byte	.LVL5
+ 628 0036 1E000000 		.4byte	.LVL6
+ 629 003a 0100     		.2byte	0x1
+ 630 003c 50       		.byte	0x50
+ 631 003d 1E000000 		.4byte	.LVL6
+ 632 0041 22000000 		.4byte	.LVL7
+ 633 0045 0400     		.2byte	0x4
+ 634 0047 F3       		.byte	0xf3
+ 635 0048 01       		.uleb128 0x1
+ 636 0049 50       		.byte	0x50
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 13
+
+
+ 637 004a 9F       		.byte	0x9f
+ 638 004b 22000000 		.4byte	.LVL7
+ 639 004f 24000000 		.4byte	.LVL8
+ 640 0053 0100     		.2byte	0x1
+ 641 0055 50       		.byte	0x50
+ 642 0056 24000000 		.4byte	.LVL8
+ 643 005a 26000000 		.4byte	.LFE64
+ 644 005e 0400     		.2byte	0x4
+ 645 0060 F3       		.byte	0xf3
+ 646 0061 01       		.uleb128 0x1
+ 647 0062 50       		.byte	0x50
+ 648 0063 9F       		.byte	0x9f
+ 649 0064 00000000 		.4byte	0
+ 650 0068 00000000 		.4byte	0
+ 651              	.LLST1:
+ 652 006c 00000000 		.4byte	.LVL1
+ 653 0070 16000000 		.4byte	.LVL4
+ 654 0074 0200     		.2byte	0x2
+ 655 0076 30       		.byte	0x30
+ 656 0077 9F       		.byte	0x9f
+ 657 0078 16000000 		.4byte	.LVL4
+ 658 007c 1C000000 		.4byte	.LVL5
+ 659 0080 0100     		.2byte	0x1
+ 660 0082 50       		.byte	0x50
+ 661 0083 1C000000 		.4byte	.LVL5
+ 662 0087 24000000 		.4byte	.LVL8
+ 663 008b 0200     		.2byte	0x2
+ 664 008d 30       		.byte	0x30
+ 665 008e 9F       		.byte	0x9f
+ 666 008f 24000000 		.4byte	.LVL8
+ 667 0093 26000000 		.4byte	.LFE64
+ 668 0097 0100     		.2byte	0x1
+ 669 0099 50       		.byte	0x50
+ 670 009a 00000000 		.4byte	0
+ 671 009e 00000000 		.4byte	0
+ 672              		.section	.debug_aranges,"",%progbits
+ 673 0000 24000000 		.4byte	0x24
+ 674 0004 0200     		.2byte	0x2
+ 675 0006 00000000 		.4byte	.Ldebug_info0
+ 676 000a 04       		.byte	0x4
+ 677 000b 00       		.byte	0
+ 678 000c 0000     		.2byte	0
+ 679 000e 0000     		.2byte	0
+ 680 0010 00000000 		.4byte	.LFB63
+ 681 0014 02000000 		.4byte	.LFE63-.LFB63
+ 682 0018 00000000 		.4byte	.LFB64
+ 683 001c 26000000 		.4byte	.LFE64-.LFB64
+ 684 0020 00000000 		.4byte	0
+ 685 0024 00000000 		.4byte	0
+ 686              		.section	.debug_ranges,"",%progbits
+ 687              	.Ldebug_ranges0:
+ 688 0000 00000000 		.4byte	.LFB63
+ 689 0004 02000000 		.4byte	.LFE63
+ 690 0008 00000000 		.4byte	.LFB64
+ 691 000c 26000000 		.4byte	.LFE64
+ 692 0010 00000000 		.4byte	0
+ 693 0014 00000000 		.4byte	0
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 14
+
+
+ 694              		.section	.debug_line,"",%progbits
+ 695              	.Ldebug_line0:
+ 696 0000 8C010000 		.section	.debug_str,"MS",%progbits,1
+ 696      02005701 
+ 696      00000201 
+ 696      FB0E0D00 
+ 696      01010101 
+ 697              	.LASF29:
+ 698 0000 464C4147 		.ascii	"FLAG_T\000"
+ 698      5F5400
+ 699              	.LASF3:
+ 700 0007 5F5F7569 		.ascii	"__uint8_t\000"
+ 700      6E74385F 
+ 700      7400
+ 701              	.LASF25:
+ 702 0011 73746174 		.ascii	"status\000"
+ 702      757300
+ 703              	.LASF38:
+ 704 0018 62757474 		.ascii	"button_debounce\000"
+ 704      6F6E5F64 
+ 704      65626F75 
+ 704      6E636500 
+ 705              	.LASF6:
+ 706 0028 5F5F696E 		.ascii	"__int32_t\000"
+ 706      7433325F 
+ 706      7400
+ 707              	.LASF23:
+ 708 0032 6D61736B 		.ascii	"mask\000"
+ 708      00
+ 709              	.LASF35:
+ 710 0037 53636861 		.ascii	"Schakelklok_Buttons.c\000"
+ 710      6B656C6B 
+ 710      6C6F6B5F 
+ 710      42757474 
+ 710      6F6E732E 
+ 711              	.LASF28:
+ 712 004d 62697450 		.ascii	"bitPosition\000"
+ 712      6F736974 
+ 712      696F6E00 
+ 713              	.LASF20:
+ 714 0059 50524553 		.ascii	"PRESS\000"
+ 714      5300
+ 715              	.LASF26:
+ 716 005f 42555454 		.ascii	"BUTTON_T\000"
+ 716      4F4E5F54 
+ 716      00
+ 717              	.LASF15:
+ 718 0068 666C6F61 		.ascii	"float\000"
+ 718      7400
+ 719              	.LASF24:
+ 720 006e 636F756E 		.ascii	"counter\000"
+ 720      74657200 
+ 721              	.LASF1:
+ 722 0076 756E7369 		.ascii	"unsigned char\000"
+ 722      676E6564 
+ 722      20636861 
+ 722      7200
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 15
+
+
+ 723              	.LASF34:
+ 724 0084 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 724      43313120 
+ 724      352E342E 
+ 724      31203230 
+ 724      31363036 
+ 725 00b7 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 725      20726576 
+ 725      6973696F 
+ 725      6E203233 
+ 725      37373135 
+ 726 00ea 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 726      66756E63 
+ 726      74696F6E 
+ 726      2D736563 
+ 726      74696F6E 
+ 727              	.LASF37:
+ 728 0112 63686563 		.ascii	"checkButtons\000"
+ 728      6B427574 
+ 728      746F6E73 
+ 728      00
+ 729              	.LASF8:
+ 730 011f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 730      20756E73 
+ 730      69676E65 
+ 730      6420696E 
+ 730      7400
+ 731              	.LASF5:
+ 732 0131 73686F72 		.ascii	"short unsigned int\000"
+ 732      7420756E 
+ 732      7369676E 
+ 732      65642069 
+ 732      6E7400
+ 733              	.LASF30:
+ 734 0144 62757474 		.ascii	"button_ptr\000"
+ 734      6F6E5F70 
+ 734      747200
+ 735              	.LASF40:
+ 736 014f 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 736      52784275 
+ 736      66666572 
+ 736      00
+ 737              	.LASF4:
+ 738 015c 5F5F7569 		.ascii	"__uint16_t\000"
+ 738      6E743136 
+ 738      5F7400
+ 739              	.LASF16:
+ 740 0167 646F7562 		.ascii	"double\000"
+ 740      6C6500
+ 741              	.LASF36:
+ 742 016e 443A5C46 		.ascii	"D:\\Files\\Uni\\Embedded_4\\Emb4\\Schakelklok.cydsn"
+ 742      696C6573 
+ 742      5C556E69 
+ 742      5C456D62 
+ 742      65646465 
+ 743 019c 00       		.ascii	"\000"
+ 744              	.LASF39:
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 16
+
+
+ 745 019d 62746E53 		.ascii	"btnStatus\000"
+ 745      74617475 
+ 745      7300
+ 746              	.LASF31:
+ 747 01a7 666C6167 		.ascii	"flag\000"
+ 747      00
+ 748              	.LASF11:
+ 749 01ac 756E7369 		.ascii	"unsigned int\000"
+ 749      676E6564 
+ 749      20696E74 
+ 749      00
+ 750              	.LASF27:
+ 751 01b9 61646472 		.ascii	"address\000"
+ 751      65737300 
+ 752              	.LASF10:
+ 753 01c1 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 753      206C6F6E 
+ 753      6720756E 
+ 753      7369676E 
+ 753      65642069 
+ 754              	.LASF12:
+ 755 01d8 75696E74 		.ascii	"uint8_t\000"
+ 755      385F7400 
+ 756              	.LASF14:
+ 757 01e0 696E7433 		.ascii	"int32_t\000"
+ 757      325F7400 
+ 758              	.LASF18:
+ 759 01e8 73697A65 		.ascii	"sizetype\000"
+ 759      74797065 
+ 759      00
+ 760              	.LASF9:
+ 761 01f1 6C6F6E67 		.ascii	"long long int\000"
+ 761      206C6F6E 
+ 761      6720696E 
+ 761      7400
+ 762              	.LASF17:
+ 763 01ff 63686172 		.ascii	"char\000"
+ 763      00
+ 764              	.LASF2:
+ 765 0204 73686F72 		.ascii	"short int\000"
+ 765      7420696E 
+ 765      7400
+ 766              	.LASF13:
+ 767 020e 75696E74 		.ascii	"uint16_t\000"
+ 767      31365F74 
+ 767      00
+ 768              	.LASF7:
+ 769 0217 6C6F6E67 		.ascii	"long int\000"
+ 769      20696E74 
+ 769      00
+ 770              	.LASF19:
+ 771 0220 6C6F6E67 		.ascii	"long double\000"
+ 771      20646F75 
+ 771      626C6500 
+ 772              	.LASF0:
+ 773 022c 7369676E 		.ascii	"signed char\000"
+ 773      65642063 
+ARM GAS  C:\Users\laure\AppData\Local\Temp\cc4oKCVO.s 			page 17
+
+
+ 773      68617200 
+ 774              	.LASF33:
+ 775 0238 62757474 		.ascii	"buttonRead_i\000"
+ 775      6F6E5265 
+ 775      61645F69 
+ 775      00
+ 776              	.LASF32:
+ 777 0245 666C6167 		.ascii	"flag_offset\000"
+ 777      5F6F6666 
+ 777      73657400 
+ 778              	.LASF22:
+ 779 0251 42555454 		.ascii	"BUTTONSTATUS_T\000"
+ 779      4F4E5354 
+ 779      41545553 
+ 779      5F5400
+ 780              	.LASF21:
+ 781 0260 4C4F4E47 		.ascii	"LONGPRESS\000"
+ 781      50524553 
+ 781      5300
+ 782              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

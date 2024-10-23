@@ -1,0 +1,3 @@
+--------------- Build Started: 10/07/2024 12:16:31 Project: Schak_RTC_Test, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\laure\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p D:\Files\Uni\Embedded_4\Emb4\Schak_RTC_Test.cydsn\Schak_RTC_Test.cyprj -d CY8C5888LTI-LP097 -s D:\Files\Uni\Embedded_4\Emb4\Schak_RTC_Test.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+--------------- Build Canceled: 10/07/2024 12:16:33 ---------------
