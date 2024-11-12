@@ -1,8 +1,8 @@
 
-filename = "5x7.bdf"
+filename = "6x9.bdf"
 fontname = filename.split(".")[0]
 
-f = open(filename, "r")
+f = open("../ucs-fonts/"+filename, "r")
 chardict = {}
 curchar = None;
 
@@ -37,7 +37,8 @@ bitmap += "const char* font_"+fontname+'_name = "'+fontname+'";\n'
 bitmap += "const unsigned int font_"+fontname+"_glyphnum = "+str(size)+";\n"
 bitmap += "const unsigned int font_"+fontname+"_arraylength = "+str(size*int(fontheight))+";\n"
 bitmap += "const unsigned int font_"+fontname+"_width = "+fontwidth+";\n"
-bitmap += "const unsigned int font_"+fontname+"_height = "+fontheight+";"
+bitmap += "const unsigned int font_"+fontname+"_height = "+fontheight+";\n"
+bitmap += "const unsigned int font_"+fontname+"_startGlyph = "+'32'+";\n"
 
 size = 0;
 
