@@ -61,6 +61,10 @@
     uint8_t drawRectangle(DISPLAY_BUFFER_T* buffer, UWORD Xstart, UWORD Ystart, UWORD Xend, UWORD Yend, uint8_t thickness, UWORD colour, uint8_t doFill, UWORD fillColour);
     uint8_t drawCircle(DISPLAY_BUFFER_T* buffer, UWORD Xstart, UWORD Ystart, uint8_t radius, UWORD colour, uint8_t doFill);
     
+    // Window with OK / CANCEL
+    // Dont't do this now, dresign UI structure and look and write manual first
+    uint8_t drawWindow(DISPLAY_BUFFER_T* buffer, C_STRING_T* header, C_STRING_T* text, C_STRING_T* 
+    
 #endif
 
 /* [] END OF FILE */

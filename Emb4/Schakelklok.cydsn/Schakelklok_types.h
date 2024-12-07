@@ -44,6 +44,11 @@
         uint8_t month;
         uint16_t year;
     } DATE_T;
+    
+    typedef struct {
+	    const char* contents;
+	    uint8_t length;
+    }C_STRING_T;
 
 #endif
 /* [] END OF FILE */

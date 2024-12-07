@@ -47,6 +47,7 @@ uint8_t drawPixel(DISPLAY_BUFFER_T* buffer, UWORD X, UWORD Y, UWORD colour){
       return ERRCODE_OK;
     }
 }
+
 uint8_t drawGlyph(DISPLAY_BUFFER_T* buffer, UWORD Xstart, UWORD Ystart, uint16_t code, FONT8_T* font, UWORD colour){
     GLYPH_T glyph;
     if(fetchGlyph(font, code, &glyph) == ERRCODE_ERR)

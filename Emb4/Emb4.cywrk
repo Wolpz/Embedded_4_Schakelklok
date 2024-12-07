@@ -7,8 +7,6 @@
 <wrkspc_folders />
 <files />
 <projects>
-<v>.\Schakelklok.cydsn\Schakelklok.cyprj</v>
-<v>.\Schak_DisplayTest.cydsn\Schak_DisplayTest.cyprj</v>
 <v>.\Schak_RTC_Test.cydsn\Schak_RTC_Test.cyprj</v>
 </projects>
 <workspace_id v="bd1ceb6d-e5d2-44ab-974b-a4579efa8315" />
