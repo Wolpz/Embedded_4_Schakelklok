@@ -11,27 +11,33 @@
 */
 
 /* TODO:
-    - Add sync for internal timekeeping
-    - Add alarm functionality and connect display
+    - Implement current functionalities as tasks
+    - Change sec counter to UNIX timestamp. Saves so much fuss and potential bugs.
+    - Add alarm functionality
+    - Add menu statemanager
+    - (Optional) Add proper error reporting to queue
+    - (Optional) Add sync for internal timekeeping
 */
+#define QUEUE_DEBUG
+#define QUEUE_LOGGING  
+
+
+#define LCD_WIDTH   160 //LCD width
+#define LCD_HEIGHT  128 //LCD height
+
 #include "project.h"
 #include "..\Schakelklok.cydsn\Schakelklok_types.h"
 #include "Schakelklok_RTC.h"
 #include "Schakelklok_gfx.h"
 #include "gfx_fonts.h"
 #include "Schakelklok_display.h"
+#include "Schakelklok_queue.h"
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
-#define LCD_WIDTH   160 //LCD width
-#define LCD_HEIGHT  128 //LCD height
 
-#ifdef UART_DEBUG
-// DEBUG
-void UART_print(char label[], int val, int radix);
-#endif
 
 // ========================================
 //   Global volatiles initialisation
@@ -41,6 +47,26 @@ TIME_T systime;
 DATE_T sysdate;
 volatile uint8_t MS_CALIB_FLAG;
 volatile uint8_t INCR_TIME_FLAG;
+
+void* addr;
+
+// ========================================
+//   Task initialisation
+// ======================================== 
+typedef struct {
+    uint32_t CyPins_ID;
+    FUNC_QUEUE_T* queue;
+} LED_args_t;
+FUNCTION_ERRCODE_T LED_args_destructor(void* LED_args){
+    free(LED_args);
+    return ERRCODE_OK;
+}
+FUNCTION_ERRCODE_T setLED(void* LED_args);
+FUNCTION_ERRCODE_T clearLED(void* LED_args);
+
+#define HANDLERFUNCS {setLED, clearLED}
+#define HANDLERNAMES {"UNDEFINED", "setLED", "clearLED"}
+void queueLogger(QUEUE_LOG_DATA_T* log);
 
 // Interrupts
 // ========================================
@@ -59,6 +85,18 @@ CY_ISR(SEC_CTR_TC_INTVECT){
     INCR_TIME_FLAG = 1;
     SEC_CTR_TC_INT_ClearPending();
 }
+
+// ========================================
+//   Debug defines
+// ========================================
+#ifdef QUEUE_DEBUG
+    #define UART_DEBUG
+#endif
+
+#ifdef UART_DEBUG
+// DEBUG
+void UART_print(char label[], int val, int radix);
+#endif
 
 
 // -========================================================-
@@ -132,26 +170,53 @@ int main(void)
     
     currFont = font_8x13_struct;
     
+    // ========================================
+    //   Task queue
+    // ========================================
+    Q_TASK_T taskQueue_array[QUEUE_MAXLENGTH];
+    FUNC_QUEUE_T taskQueue;
+    taskQueue.array = taskQueue_array;
+    taskQueue.arrayLength = QUEUE_MAXLENGTH;
+    taskQueue.headIndex = taskQueue.tailIndex = taskQueue.currLength = 0;
+
+    FUNC_PTR_T handlerArray[] = HANDLERFUNCS;
+    uint8_t handlerTotal = 3;
+    char* handlerNames[] = HANDLERNAMES;  
+    QUEUE_FUNCS_DATA_T funcData;
+    funcData.amount = handlerTotal;
+    funcData.names = handlerNames;
+    funcData.ptrs = handlerArray;
     
+    // ========================================
+    //   Timing
+    // ========================================
+    TIME_T rtctime;
+    DATE_T rtcdate;
+    
+    MILLIS_COUNTER_CAPT_INT_Enable();
+    SEC_CTR_TC_INT_Enable();
+    
+    // ========================================
+    //   Debug
+    // ========================================
     #ifdef UART_DEBUG
     USBUART_Start(0, USBUART_5V_OPERATION);
     while(USBUART_GetConfiguration()==0);
     #endif
-
-    // Re-enable interrupts
-    MILLIS_COUNTER_CAPT_INT_Enable();
-    SEC_CTR_TC_INT_Enable();
     
     char* strbuf[100];
     char* text = "Hello there!";
     uint8_t text_len = strlen(text);
     
-    TIME_T rtctime;
-    DATE_T rtcdate;
+    LED_args_t LEDarg = {DebugLED_Blu, &taskQueue};
+    Q_TASK_T ledON;
+    createTask(&ledON, setLED, NULL, &LEDarg);
+    queue_addTask(&taskQueue, ledON);
     
     for(;;)
     {
-        
+        queue_handleTask(&taskQueue, &funcData, (FUNC_PTR_T)queueLogger);
+        CyDelay(500);
         /*
         if(BUTTONPRESS_REG_Read()){
             MILLIS_CTR_CAPTSEL_Write(~MILLIS_CTR_CAPTSEL_Read());
@@ -163,6 +228,7 @@ int main(void)
             Time_CalibrateMillis();
         }*/
         
+        /*
         if(INCR_TIME_FLAG){
             INCR_TIME_FLAG = 0;
             incrMins(&systime, &sysdate);
@@ -202,18 +268,62 @@ int main(void)
         LCD_TransferBuffer(0, 0, displayBuffer.width, displayBuffer.height, displayBuffer.buffer);
         
         CyDelay(50);
+        */
     }
 }
 
-#ifdef UART_DEBUG
-// DEBUG
+// ========================================
+//  TASK DEFINITIONS
+// ========================================
+FUNCTION_ERRCODE_T setLED(void* LEDargs_vptr){
+    LED_args_t* args = (LED_args_t*) LEDargs_vptr;
+    CyPins_SetPin(args->CyPins_ID);
+    
+	Q_TASK_T task;
+	LED_args_t* arg = (LED_args_t*)malloc(sizeof(LED_args_t));
+    arg->CyPins_ID = args->CyPins_ID;
+    arg->queue = args->queue;
+	createTask(&task, clearLED, LED_args_destructor, (void*)arg);
+	queue_addTask(args->queue, task);
+    
+    return ERRCODE_OK;
+};
+FUNCTION_ERRCODE_T clearLED(void* LEDargs_vptr){
+    LED_args_t* args = (LED_args_t*) LEDargs_vptr;
+    CyPins_ClearPin(args->CyPins_ID);
+    
+    Q_TASK_T task;
+	LED_args_t* arg = (LED_args_t*)malloc(sizeof(LED_args_t));
+    arg->CyPins_ID = args->CyPins_ID;
+    arg->queue = args->queue;
+	createTask(&task, setLED, LED_args_destructor, (void*)arg);
+	queue_addTask(args->queue, task);
+    
+    return ERRCODE_OK;
+}
+
+// ========================================
+//  Debug & logging
+// ========================================
+void queueLogger(QUEUE_LOG_DATA_T* log){
+    char** handlerNames = log->funcData->names;
+    USBUART_PutString("\r\n---!!!---\r\n");
+    CyDelay(10);
+    USBUART_PutString("Task failed: ");
+    CyDelay(10);
+    USBUART_PutString(handlerNames[log->funcId]);
+    CyDelay(10);
+    USBUART_PutString("\r\n---!!!---\r\n");
+    CyDelay(10);
+}
+
 void UART_print(char label[], int val, int radix){
     char strbuf[100];
     char ibuf[30];
-    //itoa(val, ibuf, radix);
-    sprintf(strbuf, "%s: %u\r\n", label, val);
+    itoa(val, ibuf, radix);
+    sprintf(strbuf, "%s: %s\r\n", label, ibuf);
     USBUART_PutString(strbuf);
+    CyDelay(10);
 }
-#endif
 
 /* [] END OF FILE */

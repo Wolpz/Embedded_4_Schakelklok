@@ -30,6 +30,8 @@
     typedef uint16_t UWORD;
     typedef uint8_t UBYTE;
     typedef uint32_t UDOUBLE;
+    
+    typedef uint8_t FUNC_ERRCODE_T;
 
     typedef struct {
         uint8_t hours;
@@ -44,11 +46,6 @@
         uint8_t month;
         uint16_t year;
     } DATE_T;
-    
-    typedef struct {
-	    const char* contents;
-	    uint8_t length;
-    }C_STRING_T;
 
 #endif
 /* [] END OF FILE */

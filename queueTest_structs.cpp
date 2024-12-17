@@ -178,7 +178,6 @@ FUNC_ERRCODE_T queue_addTask(FUNC_QUEUE_T* q_ptr, Q_TASK_T task) {
 	else if (q_ptr->currLength != 0) {
 		q_ptr->tailIndex++;
 	}
-
 	q_ptr->array[q_ptr->tailIndex] = task;
 	q_ptr->currLength++;
 
@@ -192,18 +191,19 @@ FUNC_ERRCODE_T queue_addTask(FUNC_QUEUE_T* q_ptr, Q_TASK_T task) {
 FUNC_ERRCODE_T queue_handleTask(FUNC_QUEUE_T* q) {
 	Q_TASK_T task = q->array[q->headIndex];
 
-	FUNC_ERRCODE_T result = (task.handlerPtr)(task.argStruct_ptr);
+	FUNCTION_ERRCODE_T result = (task.handlerPtr)(task.argStruct_ptr);
 	queue_popHead(q);
-	if (result != ERRCODE_OK) {
+	if (result == ERRCODE_FAIL)
+		return ERRCODE_FAIL;
+	if (result == ERRCODE_RETRY && task.retries < QUEUE_MAXRETRIES) {
 		task.retries++;
 		queue_addTask(q, task);
+		return ERRCODE_RETRY;
 	}
-	else {
-		if (task.destructorPtr != NULL) {
-			task.destructorPtr(task.argStruct_ptr);
-		}
-		return ERRCODE_OK;
+	if (task.destructorPtr != NULL) {
+		task.destructorPtr(task.argStruct_ptr);
 	}
+	return result;
 }
 
 FUNC_ERRCODE_T createTask(Q_TASK_T* taskBuf, FUNC_PTR_T handlerPtr, FUNC_PTR_T destructorPtr, void* argStruct_ptr)
