@@ -340,5 +340,34 @@ UBYTE RTC_ReadAddr(UBYTE address){
     return i2c_buf;
 }
 
+DAY_T getDayOfWeek(DATE_T date){
+    int y = date.year, m = date.month, d = date.date;
+    if (m < 3) {
+        m += 12;
+        y--;
+    }
+    int k = y % 100;
+    int j = y / 100;
+    int day = (d + (13 * (m + 1)) / 5 + k + (k / 4) + (j / 4) - (2 * j)) % 7;
+    return (DAY_T)((day + 5) % 7); // Adjust to make 0 = MON
+}
+
+uint8_t validateDate(DATE_T date){
+    return (date.date <= getDaysInMonth(date.month, date.year));
+}
+
+uint8_t getDaysInMonth(uint8_t m, uint16_t y){
+    const uint8_t daysInMonth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    if(m != 2){
+        return daysInMonth[m-1];
+    }
+    else if((y % 400 == 0) || ((y % 100 != 0) && (y % 4 == 0))){
+        return 29;
+    }
+    else{
+        return 28;
+    }
+}
+
 
 /* [] END OF FILE */

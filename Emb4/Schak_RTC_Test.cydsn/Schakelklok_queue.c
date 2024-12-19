@@ -14,7 +14,7 @@
 /* 	popHead
 	'removes' entry from queue by incrementing head index
 */
-FUNCTION_ERRCODE_T queue_popHead(FUNC_QUEUE_T* q) {
+FUNC_ERRCODE_T queue_popHead(FUNC_QUEUE_T* q) {
 	if (q->headIndex != q->tailIndex){        
         if(q->headIndex < (QUEUE_MAXLENGTH-1)){
             q->headIndex++;
@@ -33,7 +33,7 @@ FUNCTION_ERRCODE_T queue_popHead(FUNC_QUEUE_T* q) {
 /*	addTask
 	adds new task data and pointers to next element in queue and updates tail index to match
 */
-FUNCTION_ERRCODE_T queue_addTask(FUNC_QUEUE_T* q_ptr, Q_TASK_T task) {
+FUNC_ERRCODE_T queue_addTask(FUNC_QUEUE_T* q_ptr, Q_TASK_T task) {
 	if (q_ptr->currLength == q_ptr->arrayLength) {// Queue full
 		return ERRCODE_FAIL;
 	}
@@ -54,14 +54,14 @@ FUNCTION_ERRCODE_T queue_addTask(FUNC_QUEUE_T* q_ptr, Q_TASK_T task) {
 	handles task by calling function pointer with arguments provided in task struct and removing task from queue.
 	if task fails, adds it again to the end of the queue.
 */
-FUNCTION_ERRCODE_T queue_handleTask(FUNC_QUEUE_T* q, QUEUE_FUNCS_DATA_T* funcData, FUNC_PTR_T loggingFunc) {
+FUNC_ERRCODE_T queue_handleTask(FUNC_QUEUE_T* q, QUEUE_FUNCS_DATA_T* funcData, FUNC_PTR_T errorFunc) {
     if(q->currLength == 0){
         return ERRCODE_QUEUE_EMPTY;
     }
     
 	Q_TASK_T task = q->array[q->headIndex];
 
-	FUNCTION_ERRCODE_T result = (task.handlerPtr)(task.argStruct_ptr);
+	FUNC_ERRCODE_T result = (task.handlerPtr)(task.argStruct_ptr);
     
 	if (result == ERRCODE_RETRY && task.retries < QUEUE_MAXRETRIES) {
         task.retries++;
@@ -73,7 +73,7 @@ FUNCTION_ERRCODE_T queue_handleTask(FUNC_QUEUE_T* q, QUEUE_FUNCS_DATA_T* funcDat
         QUEUE_LOG_DATA_T log;
         log.funcData = funcData;
         log.funcId = getHandlerFuncName(task.handlerPtr, funcData);
-        loggingFunc(&log);
+        errorFunc(&log);
     }
     
 	if (task.destructorPtr != NULL) {
@@ -84,7 +84,7 @@ FUNCTION_ERRCODE_T queue_handleTask(FUNC_QUEUE_T* q, QUEUE_FUNCS_DATA_T* funcDat
 	return result;
 }
 
-FUNCTION_ERRCODE_T createTask(Q_TASK_T* taskBuf, FUNC_PTR_T handlerPtr, FUNC_PTR_T destructorPtr, void* argStruct_ptr)
+FUNC_ERRCODE_T createTask(Q_TASK_T* taskBuf, FUNC_PTR_T handlerPtr, FUNC_PTR_T destructorPtr, void* argStruct_ptr)
 {
 	taskBuf->handlerPtr = handlerPtr;
 	taskBuf->destructorPtr = destructorPtr;

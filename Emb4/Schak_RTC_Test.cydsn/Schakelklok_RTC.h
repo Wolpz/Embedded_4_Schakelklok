@@ -17,6 +17,8 @@
     #include <stdio.h>
     #include <string.h>
         
+    #define UNIX_TIME_START (DATE_T){THU, 1, 1, 1970}
+    
     #define RTC_ADDRESS 0x68
     #define RTC_READ 1
     #define RTC_Write 0
@@ -48,8 +50,6 @@
     #define RTC_HOURS_12 1<<RTC_HOURS_12_24_shift
 
     #define RTC_SRAM_MILLENIUM_CENTURY 0x14
-
-    
 
     void RTC_Init();
     void RTC_Reset();
@@ -85,6 +85,10 @@
     void incrHrs(TIME_T* time, DATE_T* date);
     void incrDate(TIME_T* time, DATE_T* date);
     void incrMonth(TIME_T* time, DATE_T* date);
-
+    
+    DAY_T getDayOfWeek(DATE_T date);
+    uint8_t validateDate(DATE_T date);
+    uint8_t getDaysInMonth(uint8_t month, uint16_t year);
+    
 #endif
 /* [] END OF FILE */

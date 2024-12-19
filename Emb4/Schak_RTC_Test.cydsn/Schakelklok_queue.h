@@ -20,7 +20,7 @@
     carries these arguments. Because of this, tasks must accept a void pointer, which is then cast to an argument
     struct defined along with the function. In tasks that require dynamic memory allocation, a destructor to free()
     the memory allocated for this struct also has to be declared. If this were c++, we'd have objects to fix all this, but we don't.
-    Task functions should also return FUNCTION_ERRCODE_T to allow retries.
+    Task functions should also return FUNC_ERRCODE_T to allow retries.
     Declaration of a task function:
     
     FUNC_ERRCODE_T myFunction(void* argument_struct_pointer);
@@ -56,9 +56,9 @@
     typedef unsigned char uint8_t;
     typedef unsigned short uint16_t;
 
-    typedef uint8_t FUNCTION_ERRCODE_T;
+    typedef uint8_t FUNC_ERRCODE_T;
 
-    typedef FUNCTION_ERRCODE_T(*FUNC_PTR_T)(void* argStruct_ptr);
+    typedef FUNC_ERRCODE_T(*FUNC_PTR_T)(void* argStruct_ptr);
 
     typedef struct {
     	const char* contents;
@@ -91,12 +91,12 @@
         uint8_t funcId;
     } QUEUE_LOG_DATA_T;
 
-    FUNCTION_ERRCODE_T queue_popHead(FUNC_QUEUE_T* q);
-    FUNCTION_ERRCODE_T queue_addTask(FUNC_QUEUE_T* q, Q_TASK_T task);
-    FUNCTION_ERRCODE_T queue_handleTask(FUNC_QUEUE_T* q, QUEUE_FUNCS_DATA_T* funcData, FUNC_PTR_T loggingFunc);
-    FUNCTION_ERRCODE_T createTask(Q_TASK_T* taskBuf, FUNC_PTR_T handlerPtr, FUNC_PTR_T destructorPtr, void* argStruct_ptr);
+    FUNC_ERRCODE_T queue_popHead(FUNC_QUEUE_T* q);
+    FUNC_ERRCODE_T queue_addTask(FUNC_QUEUE_T* q, Q_TASK_T task);
+    FUNC_ERRCODE_T queue_handleTask(FUNC_QUEUE_T* q, QUEUE_FUNCS_DATA_T* funcData, FUNC_PTR_T errorFunc);
+    FUNC_ERRCODE_T createTask(Q_TASK_T* taskBuf, FUNC_PTR_T handlerPtr, FUNC_PTR_T destructorPtr, void* argStruct_ptr);
     C_STRING_T* newString(const char* str, uint8_t length);
-    FUNCTION_ERRCODE_T dropString(C_STRING_T* );
+    FUNC_ERRCODE_T dropString(C_STRING_T* );
     
     uint8_t getHandlerFuncName(FUNC_PTR_T handlerAddr, QUEUE_FUNCS_DATA_T* funcData);
 
