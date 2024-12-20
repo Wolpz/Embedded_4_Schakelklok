@@ -11,11 +11,10 @@
 */
 
 /* TODO:
-    - Add menu statemanager
+    - Finish menu statemanager
     - Implement current functionalities as tasks, attach to menu state manager
-    - Change sec counter to UNIX timestamp. Saves so much fuss and potential bugs. Requires:
-        + UNIX timestamp startpoint
-        + Menu: checking valid time/date, valid UNIX
+    - Change sec counter to ms timestamp. Saves so much fuss and potential bugs. Requires:
+        + Menu: checking valid time/date, valid
         + Get/Set Time/Date rewrite
         + Changing setting of timer
         + Calibrate time from RTC rewrite
@@ -28,10 +27,10 @@
 
 #define LCD_WIDTH   (160)
 #define LCD_HEIGHT  (128)
-#define MAX_ALARMS  (20)
+
 
 #include "project.h"
-#include "..\Schakelklok.cydsn\Schakelklok_types.h"
+#include "Schakelklok_types.h"
 #include "Schakelklok_RTC.h"
 #include "Schakelklok_gfx.h"
 #include "gfx_fonts.h"
@@ -41,8 +40,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
-
 
 // ========================================
 //  TASK DECLARATIONS
@@ -72,9 +69,9 @@ FUNC_ERRCODE_T getTime_internal(TIME_T* time_ptr);
 FUNC_ERRCODE_T getDate_internal(DATE_T* date_ptr);
 void UI_modify_date(DATE_T* date, BUTTON_T button, uint8_t index);
 void UI_modify_time(TIME_T* time, BUTTON_T button, uint8_t index);
-uint32_t time_to_unix(TIME_T time);
 
-FUNC_ERRCODE_T newAlarm(ALARM_T alarm, ALARM_T* list);
+void setTime(TIME_T time);
+uint32_t ms2counterVal(uint32_t ms);
 
 #define HANDLERFUNCS {setLED, clearLED}
 #define HANDLERNAMES {"UNDEFINED", "setLED", "clearLED"}
@@ -88,15 +85,15 @@ uint16_t min_u16(uint16_t a, uint16_t b);
 void bound_u16(uint16_t* x, uint16_t a, uint16_t b);
 
 const UWORD dispBuf_array[LCD_WIDTH * LCD_HEIGHT];
+FUNC_ERRCODE_T drawStatusBar(GFX_T* gfx, STATUSBAR_INFO_T* info);
 
 // ========================================
 // Interrupts
 // ========================================
-volatile TIME_T SYSTIME_G;
-volatile DATE_T SYSDATE_G;
+volatile DAY_T SYSDAY_G;
 
 volatile ALARM_T ALARM_ARR_G[MAX_ALARMS];
-volatile ALARM_LINKEDLIST_T* ALARMS_TODAY_G;
+volatile ALARM_T* ALARMS_TODAY_G[MAX_ALARMS];
 // ----------------------------------------
 //   Millisecond calibration interrupt
 //      Gets capture value when 1s signal from RTC is passed, uses this to determine if counter is running too fast or too slow and adjusts counter period within accuracy margin to compensate.
@@ -126,27 +123,28 @@ int main(void)
     // ========================================
     CyGlobalIntEnable; /* Enable global interrupts. */
     // Disable specific interrupts for setup
-    MILLIS_COUNTER_CAPT_INT_Disable();
-    // Set ms ctr to interrupt on capture
-    MILLIS_COUNTER_CAPT_INT_SetVector(MS_CALIBRATION_INTVECT);
-    SEC_CTR_TC_INT_SetVector(SEC_CTR_TC_INTVECT);
+    //MILLIS_COUNTER_CAPT_INT_Disable();
+    //MILLIS_COUNTER_CAPT_INT_SetVector(MS_CALIBRATION_INTVECT);
     
     // ========================================
     //   Communication setup
     // ========================================  
     I2C_Start();
-    
-    // ========================================
-    //   RTC DEBUG
-    // ======================================== 
-    // 0 CTR_TC
-    // 1 SQW edge
-    MILLIS_CTR_CAPTSEL_Write(0x0);
-    
+
     // ========================================
     //   Timekeeping and RTC setup
     // ========================================  
-    Time_Init(&systime, &sysdate);    
+    
+    // ==============   Main Counters   ================
+    MILLIS_COUNTER_WritePeriod(3000000);
+    MILLIS_COUNTER_Start();
+    
+    SEC_COUNTER_Start();
+
+    CTR_SYNC_EN_Write(0xFF); // Start time counters
+    
+    // ==============   Calibration Counter   ================
+    RTC_SEC_COUNTER_Start(); // Counter to calibrate milliseconds
     
     // ========================================
     //   Display
@@ -182,7 +180,16 @@ int main(void)
     font_6x9_struct.glyph_height = font_6x9_height;
     font_6x9_struct.glyph_size = font_6x9_height * font_6x9_width;   
     
-    currFont = font_8x13_struct;
+    // TODO populate GFX_T with fonts and graphics buffer
+    
+    // ========================================
+    //   UI
+    // ========================================
+    MENU_T menu;
+    ALARM_T alarms[MAX_ALARMS];
+    menu.state = DATETIME;
+    menu.meta.index = 0;
+    menu.meta.alarmList = &alarms[0];
     
     // ========================================
     //   Task queue
@@ -383,38 +390,29 @@ void UI_modify_time(TIME_T* time, BUTTON_T button, uint8_t index){
     bound_u16(&time->ms, 0, 999);    
 }
 
-uint32_t time_to_unix(TIME_T time){
-    // TODO
+uint32_t ms2counterVal(uint32_t ms){
+    uint32_t ms_period = MILLIS_COUNTER_ReadPeriod();
+    return ms * ms_period/1000;
 }
 
-FUNC_ERRCODE_T validateAlarm(ALARM_T alarm, ALARM_T* list){
-    ALARM_T* comp;
-    for(int i = 0; i < MAX_ALARMS; i++){
-        comp = (list+i);
-        if(alarm.days == comp->days && alarm.ms == comp->ms && alarm.time_unix == comp->time_unix){
-            // Identical alarm already present
-            return ERRCODE_FAIL;
-        }
-    }
-    return ERRCODE_OK;    
+void setTime(TIME_T time){
+    uint32_t ms_ticks;
+    time2ms(time, &ms_ticks);
+    
+    SEC_COUNTER_Stop();
+    MILLIS_COUNTER_Stop();
+    
+    SEC_COUNTER_WriteCounter(ms_ticks/1000);
+    uint32_t ms_period = MILLIS_COUNTER_ReadPeriod();
+    MILLIS_COUNTER_WriteCounter(ms2counterVal(ms_ticks%1000));
+    RTC_SetSeconds(time.seconds);
+    RTC_SetMinutes(time.minutes);
+    RTC_SetHours(time.hours);
+    
+    SEC_COUNTER_Enable();    
+    MILLIS_COUNTER_Enable();
 }
 
-FUNC_ERRCODE_T newAlarm(ALARM_T alarm, ALARM_T* list){
-    ALARM_T* spot;
-    ALARM_T* comp;
-    for(int i = 0; i < MAX_ALARMS; i++){
-        comp = (list+i);
-        if(alarm.days == comp->days && alarm.ms == comp->ms && alarm.time_unix == comp->time_unix){
-            // Identical alarm already present
-            return ERRCODE_FAIL;
-        }
-        else{
-            spot = (list+i);
-        }
-    }
-    *spot = alarm;
-    return ERRCODE_OK;
-}
 
 /*    
     DATETIME,
@@ -466,9 +464,8 @@ FUNC_ERRCODE_T menuStateManager(MENU_T* menu, BUTTON_T button){
                 case FWD_OK:
                     if(meta->index == 7){
                         if(validateDate(meta->newDate)){
-                            meta->newDate.day = getDayOfWeek(meta->newDate);
-                            SYSDATE_G = meta->newDate;
-                            // TODO update internal UNIX counter
+                            meta->newDate.day = computeDayOfWeek(meta->newDate);
+                            SYSDAY_G = meta->newDate.day;
                             // TODO Schedule task to update date/time in RTC
                         }
                         else{
@@ -499,8 +496,7 @@ FUNC_ERRCODE_T menuStateManager(MENU_T* menu, BUTTON_T button){
                     break;
                 case FWD_OK:
                     if(meta->index == 8){
-                       SYSTIME_G = meta->newTime;
-                        // TODO update internal UNIX counter
+                        setTime(meta->newTime);
                         // TODO Schedule task to update date/time in RTC
                     }
                     else{
@@ -517,20 +513,27 @@ FUNC_ERRCODE_T menuStateManager(MENU_T* menu, BUTTON_T button){
                     break;
             }
             break;
-        // ============================= ALARM LIST: DAYS ==============================
-        case VIEW_DAYSELECT:
+        // ============================= ALARM LIST: OUTPUTS ==============================
+        case VIEW_OUTPUTSELECT:
             if(button == UP){
                 meta->index = max_u8(0, meta->index-1);
             }
             else if(button == DOWN){
-                meta->index = min_u8(6, meta->index+1);
+                meta->index = min_u8(3, meta->index+1);
             }
             else if(button == BACK){
                 nextState = MAINMENU;
             }
             else if(button == FWD_OK){
-                meta->daySelect = (DAY_T)meta->index;
+                meta->outputSelect = meta->index;
                 // TODO Gather list of alarms, pass to drawing or GFX_LIST_T
+                meta->outputSelect = 0x11<<(meta->index);
+                for(int i = 0; i < MAX_ALARMS; i++){
+                    if((ALARM_ARR_G[i].outputs & 0xF) == meta->outputSelect){
+                        // TODO add to list of alarms
+                        //meta->alarmList
+                    }
+                }             
                 nextState = VIEW_ALARMSELECT;
             }
             break;
@@ -543,7 +546,7 @@ FUNC_ERRCODE_T menuStateManager(MENU_T* menu, BUTTON_T button){
                 meta->index = min_u8(2, meta->index+1); // TODO set to alarm count
             }
             else if(button == BACK){
-                nextState = VIEW_DAYSELECT;
+                nextState = VIEW_OUTPUTSELECT;
             }
             else if(button == FWD_OK){
                 if(meta->index == 0){
@@ -564,7 +567,7 @@ FUNC_ERRCODE_T menuStateManager(MENU_T* menu, BUTTON_T button){
                 meta->index = min_u8(2, meta->index+1);
             }
             else if(button == BACK){
-                nextState = VIEW_DAYSELECT;
+                nextState = VIEW_OUTPUTSELECT;
             }
             else if(button == FWD_OK){
                 switch(meta->index){
@@ -573,11 +576,11 @@ FUNC_ERRCODE_T menuStateManager(MENU_T* menu, BUTTON_T button){
                         break;
                     case 1: // DELETE
                         // TODO delete alarm
-                        nextState = VIEW_DAYSELECT;
+                        nextState = VIEW_OUTPUTSELECT;
                         break;
                     case 2: // CANCEL
                     default:
-                        nextState = VIEW_DAYSELECT;
+                        nextState = VIEW_OUTPUTSELECT;
                 }
             }
             break;
@@ -587,30 +590,33 @@ FUNC_ERRCODE_T menuStateManager(MENU_T* menu, BUTTON_T button){
                 case UP:
                 case DOWN:
                     switch(meta->index){
+                        // ---- OUTPUT ON/OFF ----
+                        case 0: // Toggle output state bit
+                            meta->outputSelect ^= meta->outputSelect & (meta->outputSelect>>4);
                         // ---- TIME SETTING ----
-                        case 0 ... 7: 
-                            UI_modify_time(&meta->newTime, button, meta->index);
+                        case 1 ... 8: 
+                            UI_modify_time(&meta->newTime, button, meta->index-1);
                             break;
                         // ---- DAY SETTING ----
-                        case 8 ... 15: 
-                            meta->tempAlarm.days ^= (1u<<(meta->index-8));
+                        case 9 ... 16: 
+                            meta->tempAlarm.daysActive ^= (1u<<(meta->index-9));
                             break;
                     }
                     break;
                 case FWD_OK:
-                    if(meta->index == 15){
-                        meta->tempAlarm.time_unix = time_to_unix(meta->newTime);
+                    if(meta->index == 16){
+                        time2ms(meta->newTime, &meta->tempAlarm.time_ms);
                         if(meta->selectedAlarm == NULL){
                             if(newAlarm(meta->tempAlarm, ALARM_ARR_G) != ERRCODE_OK){
                                 meta->errorCode = ERRCODE_FAIL;
                             }
                             else{
-                                nextState = VIEW_DAYSELECT;
+                                nextState = VIEW_OUTPUTSELECT;
                             }
                         }
                         else if(validateAlarm(meta->tempAlarm, ALARM_ARR_G)){
                             *meta->selectedAlarm = meta->tempAlarm;
-                            nextState = VIEW_DAYSELECT;
+                            nextState = VIEW_OUTPUTSELECT;
                         }
                         else{
                             meta->errorCode = ERRCODE_FAIL;
@@ -622,7 +628,7 @@ FUNC_ERRCODE_T menuStateManager(MENU_T* menu, BUTTON_T button){
                     break;
                 case BACK:                
                     if(meta->index == 0){
-                        nextState = VIEW_DAYSELECT;
+                        nextState = VIEW_OUTPUTSELECT;
                     }
                     else{
                         meta->index--;
@@ -630,6 +636,7 @@ FUNC_ERRCODE_T menuStateManager(MENU_T* menu, BUTTON_T button){
                     break;
                 }
             break;
+        // ============================= DEBUG/PULSE MENU ==============================
         case DEBUGMENU:
             if(meta->pulseMode_active){
                 // TODO
@@ -638,6 +645,7 @@ FUNC_ERRCODE_T menuStateManager(MENU_T* menu, BUTTON_T button){
                 // TODO
             }
             break;
+        // ============================= USB CONNECTIVITY ==============================
         case USBMENU:
                 // TODO
             break;
@@ -649,7 +657,7 @@ FUNC_ERRCODE_T menuStateManager(MENU_T* menu, BUTTON_T button){
         // On enter state
         switch(nextState){
             case SETDATE:
-                meta->newDate = UNIX_TIME_START;
+                meta->newDate = (DATE_T){THU, 1, 1, 1970}; // UNIX start date :)
                 break;
             case SETTIME:
                 meta->newTime = (TIME_T){0, 0, 0, 0};
@@ -666,8 +674,66 @@ FUNC_ERRCODE_T menuStateManager(MENU_T* menu, BUTTON_T button){
     return ERRCODE_OK;
 }
 
-FUNC_ERRCODE_T drawMenu(MENU_T* menu, DISPLAY_BUFFER_T* buffer){
-    // TODO
+// TODO NEXT UP
+FUNC_ERRCODE_T drawMenu(MENU_T* menu, GFX_T* gfxData){
+        MENU_METADATA_T* meta = &menu->meta;
+    
+        drawStatusBar();
+        
+        switch(menu->state){
+        // ============================= DATETIME ==============================
+        case DATETIME:
+            
+            break;
+        // ============================= MAINMENU ==============================
+        case MAINMENU:
+
+            break;
+        // ============================= SETDATE ==============================
+        case SETDATE:
+
+            break;
+        // ============================= SETTIME ==============================
+        case SETTIME:
+
+            break;
+        // ============================= ALARM LIST: OUTPUTS ==============================
+        case VIEW_OUTPUTSELECT:
+
+            break;
+        // ============================= ALARM LIST: ALARMS ==============================
+        case VIEW_ALARMSELECT:
+
+            break;
+        // ============================= ALARM LIST: OPTIONS ==============================
+        case VIEW_ALARMOPTIONS:
+
+            break;
+        // ============================= EDIT ALARM ==============================
+        case EDITALARM:    
+
+            break;
+        // ============================= DEBUG/PULSE MENU ==============================
+        case DEBUGMENU:
+            if(meta->pulseMode_active){
+                // TODO
+            }
+            else{
+                // TODO
+            }
+            break;
+        // ============================= USB CONNECTIVITY ==============================
+        case USBMENU:
+                // TODO
+            break;
+        default:
+            break;
+    }
+}
+
+FUNC_ERRCODE_T drawStatusBar(GFX_T* gfx, STATUSBAR_INFO_T* info){
+    DISPLAY_BUFFER_T* buffer = gfx->display;
+    // TODO THIS
 }
 
 // ========================================

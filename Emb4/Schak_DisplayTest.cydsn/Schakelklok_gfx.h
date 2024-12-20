@@ -31,7 +31,7 @@
         uint8_t glyph_width;
         uint8_t glyph_height;
         uint16_t glyph_size;
-        char* name;
+        char* nameAAA;
     } FONT8_T;
     
     typedef struct {
@@ -49,14 +49,7 @@
         uint16_t index;
     } DISPLAY_BUFFER_T;
     
-    typedef struct{
-        uint16_t width;
-        uint16_t height;
-        DISPLAY_BUFFER_T* buffer_obj;
-        FUNC_ERRCODE_T(*sendToDisplay)(DISPLAY_BUFFER_T* buffer_obj);
-    } DISPLAY_OBJ_T;
-    
-    typedef struct {
+        typedef struct {
         FUNC_ERRCODE_T(*drawListItem)(FONT8_T* font, void* args);
         FONT8_T* font;
         void* args;
@@ -69,10 +62,10 @@
     } GFX_LIST_T;
     
     typedef struct {
-        DISPLAY_OBJ_T display;
+        DISPLAY_BUFFER_T display;
         FONT8_T** fonts;
         uint8_t fontCount;
-    } GFX_OBJ_T;
+    } GFX_T;
 
     uint8_t fetchGlyph(FONT8_T* fontData, uint16_t code, GLYPH_T* glyphBuf);
     

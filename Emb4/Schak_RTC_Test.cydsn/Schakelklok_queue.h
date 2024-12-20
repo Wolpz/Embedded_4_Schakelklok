@@ -61,11 +61,6 @@
     typedef FUNC_ERRCODE_T(*FUNC_PTR_T)(void* argStruct_ptr);
 
     typedef struct {
-    	const char* contents;
-    	uint8_t length;
-    }C_STRING_T;
-
-    typedef struct {
     	FUNC_PTR_T handlerPtr;
     	FUNC_PTR_T destructorPtr;
     	uint8_t retries;
@@ -95,8 +90,6 @@
     FUNC_ERRCODE_T queue_addTask(FUNC_QUEUE_T* q, Q_TASK_T task);
     FUNC_ERRCODE_T queue_handleTask(FUNC_QUEUE_T* q, QUEUE_FUNCS_DATA_T* funcData, FUNC_PTR_T errorFunc);
     FUNC_ERRCODE_T createTask(Q_TASK_T* taskBuf, FUNC_PTR_T handlerPtr, FUNC_PTR_T destructorPtr, void* argStruct_ptr);
-    C_STRING_T* newString(const char* str, uint8_t length);
-    FUNC_ERRCODE_T dropString(C_STRING_T* );
     
     uint8_t getHandlerFuncName(FUNC_PTR_T handlerAddr, QUEUE_FUNCS_DATA_T* funcData);
 

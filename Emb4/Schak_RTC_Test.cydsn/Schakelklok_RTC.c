@@ -11,146 +11,8 @@
 */
 #include "Schakelklok_RTC.h"
 
-void Time_Init(volatile TIME_T* time, volatile DATE_T* date){
-    // ==============   RTC and time   ================
-    RTC_Init();
-    time->ms = 0;
-    time->seconds = RTC_GetSeconds();
-    time->minutes = RTC_GetMinutes();
-    time->hours = RTC_GetHours();
-    
-    date->date = RTC_GetDate();
-    date->day = RTC_GetDay();
-    date->month = RTC_GetMonth();
-    date->year = RTC_GetYear();
-    
-    // ==============   Main Counters   ================
-    MILLIS_COUNTER_WritePeriod(3000000);
-    MILLIS_COUNTER_Start();
-    
-    SEC_COUNTER_Start();
-    SEC_COUNTER_Stop();
-    SEC_COUNTER_WriteCounter(RTC_GetSeconds());
-    SEC_COUNTER_Enable();
-    CTR_SYNC_EN_Write(0xFF); // Start time counters
-    
-    // ==============   Calibration Counter   ================
-    RTC_SEC_COUNTER_Start(); // Counter to calibrate milliseconds
-}
 
-void TimeToString(TIME_T time, char* buf){
-	sprintf(buf, "%02d:%02d:%02d:%03d\r\n", time.hours, time.minutes, time.seconds, time.ms);
-}
 
-void DateToString(DATE_T date, char* buf){
-    char* dayRef[7] = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
-    sprintf(buf, "%s %02d-%02d-%04d\r\n", dayRef[date.day-1], date.date, date.month, date.year);
-}
-
-void incrMins(TIME_T* time, DATE_T* date){
-    if(time->minutes < 59){
-        time->minutes++;
-    }
-    else{
-        time->minutes = 0;
-        incrHrs(time, date);
-    }
-}
-void incrHrs(TIME_T* time, DATE_T* date){
-    if(time->hours < 23){
-        time->hours++;
-    }
-    else{
-        time->hours = 0;
-        incrDate(time, date);
-    }
-}
-void incrDate(TIME_T* time, DATE_T* date){
-    uint8_t daysPerMonth[12] = {31, 28, 31, 30, 31, 30, 31, 30, 31, 30, 31};
-    if(date->year%4 == 0)
-        daysPerMonth[1] = 29;
-        
-    if(date->date < daysPerMonth[date->month-1]){
-        date->date++;
-    }
-    else{
-        date->date = 1;
-        incrMonth(time, date);
-    }
-    
-    if(date->day < 7)
-        date->day++;
-    else
-        date->day = 1;
-}
-void incrMonth(TIME_T* time, DATE_T* date){
-    if(date->month < 12){
-        date->month++;
-    }
-    else{
-        date->month = 1;
-        date->year++;
-    }
-}
-
-// TODO make this whole thing work: issue is with oneshot calibration timer
-void Time_CalibrateMillis(){
-    uint32_t ms_cur = MILLIS_COUNTER_ReadCapture();
-    uint32_t millis_period = MILLIS_COUNTER_ReadPeriod();
-    uint32_t millis_newperiod;
-    int32_t  error;
-    MILLIS_COUNTER_ClearFIFO();
-    
-    char strbuf[200];
-    if(ms_cur == millis_period){
-        //sprintf(strbuf, "Cur:\t%lu\r\nPer:\t%lu \r\nEqual.\r\n\n", ms_cur, millis_period, ms_cur, millis_period);
-        return;
-    }
-    else if(ms_cur > (millis_period/2)){
-        // If timer is running too fast (down counter) it needs a larger period
-        error = millis_period - ms_cur;
-    }
-    else {
-        // If timer is running too slow (down counter) it needs a lower period
-        error = -ms_cur;
-    }
-    
-    millis_newperiod = millis_period + error;
-    //sprintf(strbuf, "Cur:\t%lu\r\nPer:\t%lu\r\nError:\t%d\r\n %lu + %d = %lu\r\n\n", ms_cur, millis_period, error, millis_period, error, millis_newperiod);
-    sprintf(strbuf, "%d\r\n", error);
-    USBUART_PutString(strbuf);
-    
-    // TODO add accuracy margin
-    // TODO ADD P(ID)
- 
-    MILLIS_COUNTER_WritePeriod(millis_newperiod); 
-}
-
-uint16_t GetMillis(){
-    double millis_period = MILLIS_COUNTER_ReadPeriod();
-    double ms_cur = millis_period - MILLIS_COUNTER_ReadCounter(); // because of down counter
-    uint16_t millis = 1000*(ms_cur/millis_period);
-    return millis;
-}
-
-// TODO TEST
-void SetMillis(uint16_t millis){
-    // - Disable ms counter and calibration interrupt
-    MILLIS_COUNTER_Stop();
-    CTR_SYNC_EN_Write(0x0);
-    MILLIS_COUNTER_CAPT_INT_Disable();
-    
-    
-    // - Calculate and write new current value
-    double millis_period = MILLIS_COUNTER_ReadPeriod();
-    double ms_cur = (1-(float)millis/1000) * millis_period; // 1-ratio because down counter
-    MILLIS_COUNTER_WriteCounter(ms_cur);
-    
-    // - Re enable
-    MILLIS_COUNTER_Enable();
-    CTR_SYNC_EN_Write(0x1);
-    MILLIS_COUNTER_CAPT_INT_Enable();
-}
 
 void RTC_Init(){
     // Get hours, check current 12/24h setting
@@ -340,7 +202,64 @@ UBYTE RTC_ReadAddr(UBYTE address){
     return i2c_buf;
 }
 
-DAY_T getDayOfWeek(DATE_T date){
+    // ====================================
+    // Alarms
+    // ====================================
+    FUNC_ERRCODE_T newAlarm(ALARM_T alarm, ALARM_T* list){
+        ALARM_T* spot;
+        ALARM_T* comp;
+        for(int i = 0; i < MAX_ALARMS; i++){
+            comp = (list+i);
+            if(alarm.daysActive == comp->daysActive && alarm.outputs == comp->outputs && alarm.time_ms == comp->time_ms){
+                // Identical alarm already present
+                return ERRCODE_FAIL;
+            }
+            else{
+                spot = (list+i);
+            }
+        }
+        *spot = alarm;
+        return ERRCODE_OK;
+    }
+
+    // TODO
+    // Sorts alarms in ascending order
+    FUNC_ERRCODE_T sortAlarms(ALARM_T* alarms){
+        ALARM_T* temp;
+        for(int i = 0; i < MAX_ALARMS-1; i++){
+            //if(((alarmList+i)
+        }
+    }
+    
+    FUNC_ERRCODE_T validateAlarm(ALARM_T alarm, ALARM_T* list){
+        ALARM_T* comp;
+        for(int i = 0; i < MAX_ALARMS; i++){
+            comp = (list+i);
+            if(alarm.daysActive == comp->daysActive && alarm.outputs == comp->outputs && alarm.time_ms == comp->time_ms){
+                // Identical alarm already present
+                return ERRCODE_FAIL;
+            }
+        }
+        return ERRCODE_OK;    
+    }
+    
+    // ====================================
+    // Internal timekeeping
+    // ====================================
+    void ms2time(uint32_t ms, TIME_T * time) {
+        time->ms = ms % 1000;
+        time->seconds = (ms / 1000) % 60;
+        time->minutes = (ms / 60000) % 60;
+        time->hours = ms / 3600000;
+    }
+    void time2ms(TIME_T time, uint32_t * ms) {
+        *ms = time.ms + time.seconds * 1000 + time.minutes * 60000 + time.hours * 3600000;
+    }
+    
+// ====================================
+// Helpers
+// ====================================
+DAY_T computeDayOfWeek(DATE_T date){
     int y = date.year, m = date.month, d = date.date;
     if (m < 3) {
         m += 12;
@@ -369,5 +288,12 @@ uint8_t getDaysInMonth(uint8_t m, uint16_t y){
     }
 }
 
+void TimeToString(TIME_T time, char* buf){
+	sprintf(buf, "%02d:%02d:%02d:%03d\r\n", time.hours, time.minutes, time.seconds, time.ms);
+}
 
+void DateToString(DATE_T date, char* buf){
+    char* dayRef[7] = {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
+    sprintf(buf, "%s %02d-%02d-%04d\r\n", dayRef[date.day-1], date.date, date.month, date.year);
+}
 /* [] END OF FILE */

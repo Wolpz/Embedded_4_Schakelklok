@@ -19,8 +19,7 @@
     #define FONT_HEIGHT_OFFSET 15
     #define FONT_TYPE_OFFSET 16
     
-    #define ERRCODE_OK      0
-    #define ERRCODE_ERR     1
+    
     #include "..\Schakelklok.cydsn\Schakelklok_types.h"
     #include "string.h"
     
@@ -32,9 +31,9 @@
         uint8_t glyph_width;
         uint8_t glyph_height;
         uint16_t glyph_size;
-        char* name;
+        char* nameAAA;
     } FONT8_T;
-
+    
     typedef struct {
         const uint8_t* buffer;
         uint8_t width;
@@ -49,8 +48,26 @@
         uint16_t height;
         uint16_t index;
     } DISPLAY_BUFFER_T;
+    
+        typedef struct {
+        FUNC_ERRCODE_T(*drawListItem)(FONT8_T* font, void* args);
+        FONT8_T* font;
+        void* args;
+    } GFX_LIST_ITEM_T;
+    
+    typedef struct {
+        GFX_LIST_ITEM_T** items;
+        uint8_t length;
+        uint8_t selection;
+    } GFX_LIST_T;
+    
+    typedef struct {
+        DISPLAY_BUFFER_T* display;
+        FONT8_T** fonts;
+        uint8_t fontCount;
+    } GFX_T;
 
-    uint8_t fetchGlyph(FONT8_T* fontData, uint16_t code, GLYPH_T* glyphBuf );
+    uint8_t fetchGlyph(FONT8_T* fontData, uint16_t code, GLYPH_T* glyphBuf);
     
     uint8_t clearBuffer(DISPLAY_BUFFER_T* buffer, UWORD colour);
     
@@ -61,6 +78,8 @@
     uint8_t drawRectangle(DISPLAY_BUFFER_T* buffer, UWORD Xstart, UWORD Ystart, UWORD Xend, UWORD Yend, uint8_t thickness, UWORD colour, uint8_t doFill, UWORD fillColour);
     uint8_t drawCircle(DISPLAY_BUFFER_T* buffer, UWORD Xstart, UWORD Ystart, uint8_t radius, UWORD colour, uint8_t doFill);
     
+    // TODO
+    FUNC_ERRCODE_T drawList(DISPLAY_BUFFER_T* buffer, GFX_LIST_T* list, uint8_t xStart, uint8_t xEnd, uint8_t yStart, uint8_t yEnd);
 #endif
 
 /* [] END OF FILE */

@@ -17,7 +17,7 @@
     #include <stdio.h>
     #include <string.h>
         
-    #define UNIX_TIME_START (DATE_T){THU, 1, 1, 1970}
+    #define MAX_ALARMS  (20)
     
     #define RTC_ADDRESS 0x68
     #define RTC_READ 1
@@ -51,6 +51,9 @@
 
     #define RTC_SRAM_MILLENIUM_CENTURY 0x14
 
+    // ====================================
+    // RTC
+    // ====================================
     void RTC_Init();
     void RTC_Reset();
 
@@ -61,8 +64,6 @@
     void RTC_SetMinutes(uint8_t t);
     void RTC_SetHours(uint8_t hrs);
 
-    uint16_t GetMillis();
-    void SetMillis(uint16_t millis);
     uint8_t RTC_GetDay();
     uint8_t RTC_GetDate();
     uint8_t RTC_GetMonth();
@@ -75,20 +76,30 @@
     UBYTE RTC_ReadAddr(UBYTE address);
     void RTC_WriteAddr(UBYTE address, UBYTE value);
 
-    void TimeToString(TIME_T time, char buf[12]);
-    void DateToString(DATE_T date, char* buf);
+    void TimeToString(TIME_T time, C_STRING_T);
+    void DateToString(DATE_T date, C_STRING_T);
 
-    void Time_Init(volatile TIME_T* time, volatile DATE_T* date);
-    void Time_doIncrement(TIME_T* time, DATE_T* date);
-    void Time_CalibrateMillis();
-    void incrMins(TIME_T* time, DATE_T* date);
-    void incrHrs(TIME_T* time, DATE_T* date);
-    void incrDate(TIME_T* time, DATE_T* date);
-    void incrMonth(TIME_T* time, DATE_T* date);
+    // ====================================
+    // Alarms
+    // ====================================
+    FUNC_ERRCODE_T newAlarm(ALARM_T alarm, ALARM_T* list);
+    FUNC_ERRCODE_T sortAlarms(ALARM_T* alarms);
+    FUNC_ERRCODE_T validateAlarm(ALARM_T alarm, ALARM_T* list);
     
-    DAY_T getDayOfWeek(DATE_T date);
+    // ====================================
+    // Internal timekeeping
+    // ====================================
+    FUNC_ERRCODE_T time_calibrateMillis();
+    // TODO Needs to update period AND compare value
+    
+    void ms2time(uint32_t ms, TIME_T* time);
+    void time2ms(TIME_T time, uint32_t* ms);
+    
+    // ====================================
+    // Helpers
+    // ====================================
+    DAY_T computeDayOfWeek(DATE_T date);
     uint8_t validateDate(DATE_T date);
     uint8_t getDaysInMonth(uint8_t month, uint16_t year);
-    
 #endif
 /* [] END OF FILE */
