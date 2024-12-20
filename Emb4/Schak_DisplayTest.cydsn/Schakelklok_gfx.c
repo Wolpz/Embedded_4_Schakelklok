@@ -12,9 +12,6 @@
 * ========================================
 */
 #include "Schakelklok_gfx.h"
-#include "math.h"
-
-
 
 uint8_t fetchGlyph(FONT8_T* fontData, uint16_t code, GLYPH_T* glyphBuf){
     glyphBuf->width = fontData->glyph_width;
@@ -27,7 +24,7 @@ uint8_t fetchGlyph(FONT8_T* fontData, uint16_t code, GLYPH_T* glyphBuf){
         return ERRCODE_OK;
     }
     else{
-        return ERRCODE_ERR;
+        return ERRCODE_FAIL;
     }
 }
 
@@ -40,17 +37,18 @@ uint8_t clearBuffer(DISPLAY_BUFFER_T* buffer, UWORD colour){
 
 uint8_t drawPixel(DISPLAY_BUFFER_T* buffer, UWORD X, UWORD Y, UWORD colour){
     if(X >= buffer->width || Y >= buffer->height || X < 0 || Y < 0){
-        return ERRCODE_ERR;
+        return ERRCODE_FAIL;
     }
     else{
       buffer->buffer[buffer->width * Y + X] = colour;
       return ERRCODE_OK;
     }
 }
+
 uint8_t drawGlyph(DISPLAY_BUFFER_T* buffer, UWORD Xstart, UWORD Ystart, uint16_t code, FONT8_T* font, UWORD colour){
     GLYPH_T glyph;
-    if(fetchGlyph(font, code, &glyph) == ERRCODE_ERR)
-        return ERRCODE_ERR;
+    if(fetchGlyph(font, code, &glyph) == ERRCODE_FAIL)
+        return ERRCODE_FAIL;
     
     for(uint8_t layer = 0; layer < glyph.height; layer++){
 		uint8_t buf = glyph.buffer[layer];
@@ -85,7 +83,7 @@ uint8_t drawLine(DISPLAY_BUFFER_T* buffer, UWORD Xstart, UWORD Ystart, UWORD Xen
     }
     
     if(Xend >= buffer->width || Yend >= buffer->height)
-        return ERRCODE_ERR;
+        return ERRCODE_FAIL;
     
     if(Xstart == Xend){     // Vertical line
         int x  = Xstart;
@@ -118,14 +116,14 @@ uint8_t drawLine(DISPLAY_BUFFER_T* buffer, UWORD Xstart, UWORD Ystart, UWORD Xen
         return ERRCODE_OK;
     }
     else{ // Diagonal lines, not bothering with these
-        return ERRCODE_ERR;
+        return ERRCODE_FAIL;
     }
     
 }
 
 uint8_t drawRectangle(DISPLAY_BUFFER_T* buffer, UWORD Xstart, UWORD Ystart, UWORD Xend, UWORD Yend, uint8_t thickness, UWORD colour, uint8_t doFill, UWORD fillColour){
     if(Xend >= buffer->width || Yend >= buffer->height)
-        return ERRCODE_ERR;
+        return ERRCODE_FAIL;
     
     for(int y = Ystart; y < Yend; y++){     
         for(int x = Xstart; x < Xend; x++){

@@ -93,7 +93,7 @@
     
     typedef struct {
         TIME_T time;
-        DATE_T date;
+        DATE_T* date;
         
     } STATUSBAR_INFO_T;
 
